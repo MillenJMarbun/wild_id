@@ -25,7 +25,7 @@ class _MainScreenState extends State<MainScreen> {
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: new Text('No'),
+            child: new Text('Noo'),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(true),
