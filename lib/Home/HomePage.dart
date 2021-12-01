@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Home/AnimalClassCard.dart';
+import 'package:wild_id/Mammals/Mammals.dart';
 import 'package:wild_id/Primates/primates.dart';
 import 'package:wild_id/Quiz/Quiz.dart';
 import '../CardWidget.dart';
@@ -133,12 +134,12 @@ class _HomePageState extends State<HomePage> {
                          ),
                          new InkWell(
                            onTap: () {
-                             /* Navigator.push(
+                              Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => deep(),
+                              builder: (context) => Mammals(),
                             ),
-                          );*/
+                          );
                            },
                            child: cardWigdet(
                                'Mammals',

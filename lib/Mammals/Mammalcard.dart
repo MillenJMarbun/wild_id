@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
-import 'package:wild_id/Primates/PrimateData.dart';
 
-class PrimateCard extends StatelessWidget {
-  final Primates primates;
-  const PrimateCard({Key key, this.primates}) : super(key: key);
+import 'MammalsData.dart';
+
+class MammalCard extends StatelessWidget {
+  final Mammals mammal;
+  const MammalCard({Key key, this.mammal}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Color color1 = HexColor(primates.color);
-    Color color2 = HexColor(primates.color2);
+    Color color1 = HexColor(mammal.color);
+    Color color2 = HexColor(mammal.color2);
 
     return Stack(
       children: [
@@ -37,17 +38,17 @@ class PrimateCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    primates.title,
+                    mammal.title,
                     style: GoogleFonts.sora(
                         textStyle: TextStyle(
-                          fontSize: 30,
-                          color: mywhite,
-                          fontWeight: FontWeight.bold
+                            fontSize: 30,
+                            color: mywhite,
+                            fontWeight: FontWeight.bold
                         )),
                   ),
                   Spacer(),
                   Text(
-                    primates.subtitle,
+                    mammal.subtitle,
                     style: TextStyle(
                         color: Colors.grey[200],
                         fontSize: 11.0),
@@ -61,8 +62,8 @@ class PrimateCard extends StatelessWidget {
                         size: 20.0,
                       ),
                       SizedBox(width: 10),
-                      Text(primates.size,
-                      style: TextStyle(color: Colors.white, fontSize: 12)
+                      Text(mammal.size,
+                          style: TextStyle(color: Colors.white, fontSize: 12)
                       )
                     ],
                   )
@@ -74,14 +75,14 @@ class PrimateCard extends StatelessWidget {
           left: 240,
           child: Container(
             decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: color1
+                shape: BoxShape.circle,
+                color: color1
             ),
             child: Image.asset(
-              primates.image,
+              mammal.image,
               height: 100,
               width: 120,
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
           ),
         )

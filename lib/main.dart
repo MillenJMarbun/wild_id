@@ -1,13 +1,14 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/SignUp/Register.dart';
 import 'package:wild_id/starter.dart';
-
 import 'Constants/constants.dart';
+import 'Home/HomePage.dart';
 import 'Login/Login.dart';
+import 'Mammals/Mammals.dart';
+import 'Primates/primates.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.black,
         primarySwatch: kPrimaryColor,
       ),
-      home: Starter(/*title: 'Flutter Demo Home Page'*/),
+      home: Starter(),
     );
   }
 }

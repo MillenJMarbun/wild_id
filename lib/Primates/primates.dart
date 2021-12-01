@@ -17,16 +17,16 @@ class _PrimatesState extends State<Primates> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: maincol,
+      backgroundColor: Colors.white,
       /*appBar: AppBar(
-       *//* title: Text("Indonesian Primates",
+        title: Text("Indonesian Primates",
             style: GoogleFonts.sora(
                 textStyle: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: mywhite,
                 )
             )
-        ),*//*
+        ),
         elevation: 0,
         backgroundColor: maincol,
         centerTitle: true,
@@ -40,10 +40,10 @@ class _PrimatesState extends State<Primates> {
             height:300,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+             /* borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20),
-              ),
+              ),*/
               image: DecorationImage(
                 image: AssetImage("assets/camo2.jpg"),
                 fit: BoxFit.cover,
@@ -86,28 +86,41 @@ class _PrimatesState extends State<Primates> {
               ],
             ),
           ),
-          ListView.builder(
-            itemCount: recentList.length,
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            physics: BouncingScrollPhysics(),
-            itemBuilder: (context, index) {
-              var recent = recentList[index];
-              return InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ReadView(primate: recent),
-                    ),
-                  );
-                },
-                child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
-                  child: PrimateCard(primates: recent),
-                ),
-              );
-            },
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end:
+                Alignment(0.8, 0.0),
+                colors: <Color>[
+                  Color(0xff434343),
+                  Color(0xff000000)
+                ],
+              ),
+            ),
+            child: ListView.builder(
+              itemCount: recentList.length,
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              physics: BouncingScrollPhysics(),
+              itemBuilder: (context, index) {
+                var recent = recentList[index];
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ReadView(primate: recent),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 18.0, vertical: 10.0),
+                    child: PrimateCard(primates: recent),
+                  ),
+                );
+              },
+            ),
           )
        ]
         )
