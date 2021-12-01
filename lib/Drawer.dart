@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:wild_id/Constants/constants.dart';
+import 'package:wild_id/starter.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
@@ -67,6 +69,13 @@ class NavDrawer extends StatelessWidget {
                       title: Text('Marine / Aquatic', style: TextStyle(color: Colors.white)),
                       onTap: () => {Navigator.of(context).pop()},
                     ),
+                    ListTile(
+                      leading: Icon(Icons.exit_to_app),
+                      title: Text('Marine / Aquatic', style: TextStyle(color: Colors.white)),
+                      onTap: (){
+                        logout(context);
+                        },
+                    ),
                   ],
                 ))
           )
@@ -74,5 +83,10 @@ class NavDrawer extends StatelessWidget {
         ],
       ),
     );
+  }
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => Starter()));
   }
 }
