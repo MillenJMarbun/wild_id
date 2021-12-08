@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wild_id/Bird/Birds.dart';
 import 'package:wild_id/Home/AnimalClassCard.dart';
 import 'package:wild_id/Mammals/Mammals.dart';
 import 'package:wild_id/Primates/primates.dart';
@@ -44,260 +45,230 @@ class _HomePageState extends State<HomePage> {
         });
   }
 
-  Future<bool> _onWillPop() async {
-    return (await showDialog(
-      context: context,
-      builder: (context) => new AlertDialog(
-        title: new Text('Are you sure?'),
-        content: new Text('Do you want to Log Out?'),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(false),
-            child: new Text('No'),
-          ),
-          TextButton(
-            onPressed: (){
-              logout(context);
-            },
-            child: new Text('Yes'),
-          ),
-        ],
-      ),
-    )) ?? false;
-  }
-
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: _onWillPop,
-      child: Scaffold(
-        key: _scaffoldKey,
-        drawer: NavDrawer(),
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-             child: Column(
-               mainAxisAlignment: MainAxisAlignment.start,
-               crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-                 Container(
-                   height: 200,
-                   color: maincol, // 20,20,40
-                   child: Column(
-                     mainAxisAlignment: MainAxisAlignment.start,
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       SizedBox(height: 35,),
-                       new Row(
-                         children: [
-                           IconButton(
-                             icon: Icon(
-                               Icons.menu,
-                               color: Colors.white,
-                             ),
-                             onPressed: () => _scaffoldKey.currentState.openDrawer(),
+    return Scaffold(
+      key: _scaffoldKey,
+      drawer: NavDrawer(),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.start,
+             crossAxisAlignment: CrossAxisAlignment.start,
+             children: [
+               Container(
+                 height: 200,
+                 color: maincol, // 20,20,40
+                 child: Column(
+                   mainAxisAlignment: MainAxisAlignment.start,
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                     SizedBox(height: 35,),
+                     new Row(
+                       children: [
+                         IconButton(
+                           icon: Icon(
+                             Icons.menu,
+                             color: Colors.white,
                            ),
-                           SizedBox(width: 10),
-                           new Container(
-                             padding: EdgeInsets.all(4),
-                             height: 30,
-                             width: MediaQuery.of(context).size.width / 1.3,
-                             decoration: BoxDecoration(
-                               color: Colors.white,
-                               borderRadius:
-                               BorderRadius.all(Radius.circular(5.0)),
-                             ),
-                             child: Row(
-                               children: [
-                                 Icon(Icons.search),
-                                 SizedBox(width: 10),
-                                 Text('Search Wildlife', style: GoogleFonts.lexendDeca()),
-                               ],
-                             ),
+                           onPressed: () => _scaffoldKey.currentState.openDrawer(),
+                         ),
+                         SizedBox(width: 10),
+                         new Container(
+                           padding: EdgeInsets.all(4),
+                           height: 30,
+                           width: MediaQuery.of(context).size.width / 1.3,
+                           decoration: BoxDecoration(
+                             color: Colors.white,
+                             borderRadius:
+                             BorderRadius.all(Radius.circular(5.0)),
                            ),
-                         ],
-                       ),
-                       Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                         children: [
-                           Padding(
-                             padding: const EdgeInsets.only( top: 10, bottom: 20, right: 70),
-                             child: Text("Welcome, \n${loggedInUser.userName}", style: GoogleFonts.sora(
-                                 textStyle: TextStyle(
-                                   fontWeight: FontWeight.bold,
-                                   fontSize: 30,
-                                   color: Colors.white,
+                           child: Row(
+                             children: [
+                               Icon(Icons.search),
+                               SizedBox(width: 10),
+                               Text('Search Wildlife', style: GoogleFonts.lexendDeca()),
+                             ],
+                           ),
+                         ),
+                       ],
+                     ),
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceAround,
+                       children: [
+                         Padding(
+                           padding: const EdgeInsets.only( top: 10, bottom: 20, right: 70),
+                           child: Text("Welcome,\n${loggedInUser.userName}", style: GoogleFonts.sora(
+                               textStyle: TextStyle(
+                                 fontWeight: FontWeight.bold,
+                                 fontSize: 30,
+                                 color: Colors.white,
+                               )
+                           ),),
+                         ),
+                         Image.asset('assets/logoinverted.png', scale: 8,)
+                       ],
+                     )
+                   ],
+                 ),
+               ),
+
+               Container(
+                   color:Colors.white,
+                   child:Image.asset('assets/strip2.png')
+               ),
+
+               SizedBox(height: 15,),
+
+               Padding(
+                 padding: const EdgeInsets.only(left : 15, bottom: 10),
+                 child: Text("Discover", style: GoogleFonts.sora(
+                     textStyle: TextStyle(
+                       fontWeight: FontWeight.bold,
+                       fontSize: 25,
+                       color: Colors.grey[800],
+                     )
+                 ),),
+               ),
+
+               new Container(
+                 height: 700,
+                 width: MediaQuery.of(context).size.width,
+                 color: Colors.white,
+                 padding: EdgeInsets.only(left: 10, right: 10),
+                 child: new Column(
+                   children: [
+                     new Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                       children: [
+                         new InkWell(
+                           onTap: () {
+                               Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Primates(),
+                            ),
+                          );
+                           },
+                           child: cardWigdet(
+                               'Primates', 'assets/orangutancov.jpeg'),
+                         ),
+                         new InkWell(
+                           onTap: () {
+                              Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Mammals(),
+                            ),
+                          );
+                           },
+                           child: cardWigdet(
+                               'Mammals',
+                               'assets/sumatratigercov.jpg'),
+                         ),
+                       ],
+                     ),
+                     SizedBox(height: 15),
+                     new Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                       children: [
+                         new InkWell(
+                           child: cardWigdet('Birds',
+                               'assets/birdscov.jpg'),
+                           onTap: (){
+                             Navigator.push(
+                                 context,
+                                 MaterialPageRoute(
+                                     builder:
+                                         (context)=>Birds()
                                  )
-                             ),),
-                           ),
-                           Image.asset('assets/logoinverted.png', scale: 8,)
-                         ],
-                       )
-                     ],
-                   ),
+                             );
+                           },
+                         ),
+                         new InkWell(
+                           onTap: () {
+                             /*  Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Absen(),
+                            ),
+                          );*/
+                           },
+                           child: cardWigdet('Reptiles',
+                               'assets/lizardcov.jpg'),
+                         ),
+
+                       ],
+                     ),
+                     SizedBox(height: 15),
+                     new Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                       children: [
+                         new InkWell(
+                           onTap: () {
+                             /* Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LearningGame(),
+                            ),
+                          );*/
+                           },
+                           child: cardWigdet('Amphibians', 'assets/indonesianamphibians.jpg'),
+                         ),
+                         new InkWell(
+                           onTap: () {
+                             /*  Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Absen(),
+                            ),
+                          );*/
+                           },
+                           child: cardWigdet('Marine / Aquatic',
+                               'assets/indosea.jpg'),
+                         ),
+
+                       ],
+                     ),
+                   ],
                  ),
-
-                 Container(
-                     color:Colors.white,
-                     child:Image.asset('assets/strip2.png')
-                 ),
-
-                 SizedBox(height: 15,),
-
-                 Padding(
-                   padding: const EdgeInsets.only(left : 15, bottom: 10),
-                   child: Text("Discover", style: GoogleFonts.sora(
-                       textStyle: TextStyle(
-                         fontWeight: FontWeight.bold,
-                         fontSize: 25,
-                         color: Colors.grey[800],
-                       )
-                   ),),
-                 ),
-
-                 new Container(
-                   height: 700,
-                   color: Colors.white,
-                   padding: EdgeInsets.only(left: 10, right: 10),
-                   child: new Column(
-                     children: [
-                       new Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                         children: [
-                           new InkWell(
-                             onTap: () {
-                                 Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Primates(),
-                              ),
-                            );
-                             },
-                             child: cardWigdet(
-                                 'Primates', 'assets/orangutancov.jpeg'),
-                           ),
-                           new InkWell(
-                             onTap: () {
-                                Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Mammals(),
-                              ),
-                            );
-                             },
-                             child: cardWigdet(
-                                 'Mammals',
-                                 'assets/sumatratigercov.jpg'),
-                           ),
-                         ],
-                       ),
-                       SizedBox(height: 15),
-                       new Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                         children: [
-                           new InkWell(
-                             onTap: () {
-                               /* Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => LearningGame(),
-                              ),
-                            );*/
-                             },
-                             child: cardWigdet('Birds',
-                                 'assets/birdscov.jpg'),
-                           ),
-                           new InkWell(
-                             onTap: () {
-                               /*  Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Absen(),
-                              ),
-                            );*/
-                             },
-                             child: cardWigdet('Reptiles',
-                                 'assets/lizardcov.jpg'),
-                           ),
-
-                         ],
-                       ),
-                       SizedBox(height: 15),
-                       new Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                         children: [
-                           new InkWell(
-                             onTap: () {
-                               /* Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => LearningGame(),
-                              ),
-                            );*/
-                             },
-                             child: cardWigdet('Amphibians', 'assets/indonesianamphibians.jpg'),
-                           ),
-                           new InkWell(
-                             onTap: () {
-                               /*  Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Absen(),
-                              ),
-                            );*/
-                             },
-                             child: cardWigdet('Marine / Aquatic',
-                                 'assets/indosea.jpg'),
-                           ),
-
-                         ],
-                       ),
-                     ],
-                   ),
-                 ),
-                 Padding(
-                   padding: const EdgeInsets.only(left : 15, bottom: 10, right: 15),
-                   child: Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                     children: [
-                       Text("Quiz Game", style: GoogleFonts.sora(
+               ),
+               Padding(
+                 padding: const EdgeInsets.only(left : 15, bottom: 10, right: 15),
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     Text("Quiz Game", style: GoogleFonts.sora(
+                         textStyle: TextStyle(
+                           fontWeight: FontWeight.bold,
+                           fontSize: 25,
+                           color: Colors.grey[800],
+                         )
+                     ),),
+                     GestureDetector(
+                       onTap: (){
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=> Quiz()));
+                       },
+                       child: Text("View ➡", style: GoogleFonts.sora(
                            textStyle: TextStyle(
                              fontWeight: FontWeight.bold,
-                             fontSize: 25,
+                             fontSize: 15,
                              color: Colors.grey[800],
                            )
                        ),),
-                       GestureDetector(
-                         onTap: (){
-                           Navigator.push(context, MaterialPageRoute(builder: (context)=> Quiz()));
-                         },
-                         child: Text("View ➡", style: GoogleFonts.sora(
-                             textStyle: TextStyle(
-                               fontWeight: FontWeight.bold,
-                               fontSize: 15,
-                               color: Colors.grey[800],
-                             )
-                         ),),
-                       ),
-                     ],
-                   ),
+                     ),
+                   ],
                  ),
-                 InkWell(
-                   onTap: (){
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=> Quiz()));
-                     },
-                     child: Image.asset('assets/quizbanner.png')),
-                 SizedBox(height: 15,),
-               ],
-             )
-          ),
+               ),
+               InkWell(
+                 onTap: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=> Quiz()));
+                   },
+                   child: Image.asset('assets/quizbanner.png')),
+               SizedBox(height: 15,),
+             ],
+           )
         ),
-    );
+      );
   }
-}
-
-
-Future<void> logout(BuildContext context) async {
-  await FirebaseAuth.instance.signOut();
-  Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (context) => Starter()));
 }

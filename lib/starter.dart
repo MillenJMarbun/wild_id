@@ -81,7 +81,7 @@ class _StarterState extends State<Starter> {
               children: [
                 CarouselSlider(
                   options: CarouselOptions(
-                    height: 720,
+                    height: MediaQuery.of(context).size.height / 1.2/*720*/,
                       viewportFraction: 2,
                       aspectRatio: 1, //controls the image size  2.98
                       enlargeCenterPage: false,
@@ -134,7 +134,6 @@ class _StarterState extends State<Starter> {
             ),
           ],
         ),
-
       ),
     );
   }

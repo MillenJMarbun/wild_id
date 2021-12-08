@@ -3,13 +3,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wild_id/Bird/Birds.dart';
 import 'package:wild_id/SignUp/Register.dart';
 import 'package:wild_id/starter.dart';
 import 'Constants/constants.dart';
 import 'Home/HomePage.dart';
-import 'Login/Login.dart';
-import 'Mammals/Mammals.dart';
-import 'Primates/primates.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -61,7 +61,7 @@ class PrimateCard extends StatelessWidget {
                         size: 20.0,
                       ),
                       SizedBox(width: 10),
-                      Text(primates.size,
+                      Text(primates.loc,
                       style: TextStyle(color: Colors.white, fontSize: 12)
                       )
                     ],

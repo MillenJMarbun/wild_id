@@ -67,87 +67,92 @@ class _LevelState extends State<Level> {
                             )),
                       ),
                       SizedBox(height: 20),
-                      Container(
-                        height: 200,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              top: 30,
-                              child: Container(
-                                width: 340,
-                                height: 160,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      padding: EdgeInsets.only(
-                                          top: 20, left: 20, right: 20),
-                                      width: 340,
-                                      height: 160,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        gradient: LinearGradient(
-                                          begin: Alignment.topLeft,
-                                          end:
-                                          Alignment(0.8, 0.0),
-                                          colors: <Color>[
-                                           /* Color(0xffdd5e89),
-                                            Color(0xfff7bb97)*/
-                                            Color(0xff05e6c1),
-                                            Color( 0xff02aab0)
+                      InkWell(
+                        /*onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>QuizScreen(),),);
+                        },*/
+                        child: Container(
+                          height: 200,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                top: 30,
+                                child: Container(
+                                  width: 340,
+                                  height: 160,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.only(
+                                            top: 20, left: 20, right: 20),
+                                        width: 340,
+                                        height: 160,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(20),
+                                          gradient: LinearGradient(
+                                            begin: Alignment.topLeft,
+                                            end:
+                                            Alignment(0.8, 0.0),
+                                            colors: <Color>[
+                                              /* Color(0xffdd5e89),
+                                              Color(0xfff7bb97)*/
+                                              Color(0xff05e6c1),
+                                              Color( 0xff02aab0)
+                                            ],
+                                          ),
+                                        ),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              height: 40,
+                                              width: 40,
+                                              /*alignment: Alignment.center,*/
+                                              decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                      color: Colors.white),
+                                                  borderRadius: BorderRadius.circular(
+                                                      10),
+                                                  color: Colors.transparent
+                                              ),
+                                              child: Icon(Icons.play_arrow,
+                                                  color: Colors.white),
+                                            ),
+                                            SizedBox(height: 22),
+                                            Text(
+                                              "Level 1",
+                                              style: GoogleFonts.sora(
+                                                  textStyle: TextStyle(
+                                                    fontSize: 16,
+                                                    color: mywhite,
+                                                  )),
+                                            ),
+                                            SizedBox(height: 5),
+                                            Text(
+                                              "Easy Difficulty",
+                                              style: GoogleFonts.sora(
+                                                  textStyle: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20,
+                                                    color: mywhite,
+                                                  )),
+                                            ),
                                           ],
                                         ),
                                       ),
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            height: 40,
-                                            width: 40,
-                                            /*alignment: Alignment.center,*/
-                                            decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: Colors.white),
-                                                borderRadius: BorderRadius.circular(
-                                                    10),
-                                                color: Colors.transparent
-                                            ),
-                                            child: Icon(Icons.play_arrow,
-                                                color: Colors.white),
-                                          ),
-                                          SizedBox(height: 22),
-                                          Text(
-                                            "Level 1",
-                                            style: GoogleFonts.sora(
-                                                textStyle: TextStyle(
-                                                  fontSize: 16,
-                                                  color: mywhite,
-                                                )),
-                                          ),
-                                          SizedBox(height: 5),
-                                          Text(
-                                            "Easy Difficulty",
-                                            style: GoogleFonts.sora(
-                                                textStyle: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 20,
-                                                  color: mywhite,
-                                                )),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            Positioned(
-                                left: 240,
-                                bottom: 90,
-                                child: Image.asset('assets/Quiz/lizard.png', scale: 4.5)),
-                          ],
+                              Positioned(
+                                  left: 240,
+                                  bottom: 90,
+                                  child: Image.asset('assets/Quiz/lizard.png', scale: 4.5)),
+                            ],
+                          ),
                         ),
                       ),
                       Container(

@@ -93,8 +93,8 @@ class _PrimatesState extends State<Primates> {
                 end:
                 Alignment(0.8, 0.0),
                 colors: <Color>[
-                  Color(0xff434343),
-                  Color(0xff000000)
+                  Color(0xff233329),
+                  Color(0xff63d471)
                 ],
               ),
             ),

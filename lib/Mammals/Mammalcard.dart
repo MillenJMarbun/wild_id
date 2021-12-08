@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
-
 import 'MammalsData.dart';
 
 class MammalCard extends StatelessWidget {

@@ -31,6 +31,7 @@ dependencies:
   google_fonts: ^2.1.0
   curved_navigation_bar:
   google_nav_bar: ^5.0.5
+  http: ^0.13.0
   line_icons: ^2.0.0
   cloud_firestore: ^3.1.0
   fluttertoast: ^8.0.8
@@ -60,6 +61,7 @@ flutter:
     - assets/Quiz/
     - assets/Primates/
     - assets/Mammals/
+    - assets/Birds/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

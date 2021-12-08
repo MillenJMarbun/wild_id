@@ -70,8 +70,8 @@ class NavDrawer extends StatelessWidget {
                       onTap: () => {Navigator.of(context).pop()},
                     ),
                     ListTile(
-                      leading: Icon(Icons.exit_to_app),
-                      title: Text('Marine / Aquatic', style: TextStyle(color: Colors.white)),
+                      leading: Icon(Icons.exit_to_app, color: Colors.white,),
+                      title: Text('Sign Out', style: TextStyle(color: Colors.white)),
                       onTap: (){
                         logout(context);
                         },

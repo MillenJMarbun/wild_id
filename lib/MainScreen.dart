@@ -1,12 +1,15 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/Home/HomePage.dart';
 import 'package:wild_id/News/news.dart';
+import 'package:wild_id/starter.dart';
 
 import 'POTD/potd.dart';
+import 'POTD/potd_api_service.dart';
 import 'findorg/findorg.dart';
 
 class MainScreen extends StatefulWidget {
@@ -21,14 +24,16 @@ class _MainScreenState extends State<MainScreen> {
       context: context,
       builder: (context) => new AlertDialog(
         title: new Text('Are you sure?'),
-        content: new Text('Do you want to exit the app?'),
+        content: new Text('Do you want to Log Out?'),
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: new Text('Noooooo'),
+            child: new Text('No'),
           ),
           TextButton(
-            onPressed: () => Navigator.of(context).pop(true),
+            onPressed: (){
+              logout(context);
+            },
             child: new Text('Yes'),
           ),
         ],
@@ -41,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
 
   int _page = 0;
 
-  final screens = const [HomePage(tab : 1), POTD(tab: 2), NewsPage(tab: 3), findOrg(tab: 4)];
+  final screens = const [HomePage(tab : 1), AnimalPic(tab: 2), NewsPage(tab: 3), findOrg(tab: 4)];
 
   @override
   Widget build(BuildContext context) {
@@ -175,4 +180,11 @@ class _MainScreenState extends State<MainScreen> {
       ),
     );
   }
+
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => Starter()));
+  }
 }
+
