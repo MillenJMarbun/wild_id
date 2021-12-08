@@ -49,7 +49,7 @@ class _LevelState extends State<Level> {
                   child: Column(
                     children: [
                       Text(
-                        "Lets Play",
+                        "Let's Play",
                         style: GoogleFonts.sora(
                             textStyle: TextStyle(
                               fontWeight: FontWeight.bold,
