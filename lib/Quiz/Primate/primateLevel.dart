@@ -4,17 +4,25 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/Quiz/Quiz.dart';
 
-class Level extends StatefulWidget {
+class PrimateLevel extends StatefulWidget {
   @override
-  _LevelState createState() => _LevelState();
+  _PrimateLevelState createState() => _PrimateLevelState();
 }
 
-class _LevelState extends State<Level> {
+class _PrimateLevelState extends State<PrimateLevel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: quizbg,
       appBar: AppBar(
+        title: Text(
+          "Primate Quiz",
+          style: GoogleFonts.sora(
+              textStyle: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: mywhite,
+              )),
+        ),
         centerTitle: true,
         backgroundColor: quizbg,
         elevation: 0,

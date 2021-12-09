@@ -9,8 +9,7 @@ class POTD extends StatelessWidget {
   final explanation;
   final title;
   final url;
-
-
+  
   POTD({
     @required this.date,
     @required this.explanation,
@@ -39,23 +38,54 @@ class POTD extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20,),
               Container(
-                margin: EdgeInsets.only(left: 30, right: 30),
-                child: Image.network(
+                height: 350,
+                width: MediaQuery.of(context).size.height,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                ),
+                child: ClipRRect(
+                  child: Image.network(
                     url,
-                    fit: BoxFit.cover,
+                    width: 300,
                     height: 300,
-                    width: 400
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 30),
               Container(
                   margin: EdgeInsets.only(left: 20, right: 20),
-                  child: Text(title, style: TextStyle(color: maincol, fontSize:25, fontWeight: FontWeight.bold))),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(title,
+                        style: GoogleFonts.sora(
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
+                            color: maincol,
+                          )),
+                      ),
+                      SizedBox(height: 5,),
+                      Text(date,
+                        style: GoogleFonts.sora(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              color: Colors.grey[700],
+                            )),
+                      ),
+                    ],
+                  )),
+
               Container(
-                margin: EdgeInsets.only(left: 20, right: 20, top: 15),
-                child:  Text(explanation, style: TextStyle(color: Colors.black),), ///'${explanation.toString()}'
+                margin: EdgeInsets.only(left: 20, right: 20, top: 10),
+                child:  Text(explanation,  style: GoogleFonts.sora(
+                    textStyle: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                    ))), ///'${explanation.toString()}'
               ),
               SizedBox(height: 40),
             ],

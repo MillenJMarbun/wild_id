@@ -2,8 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
+import 'package:wild_id/Quiz/Amphibians/amphibiansLevel.dart';
+import 'package:wild_id/Quiz/Birds/birdsLevel.dart';
+import 'package:wild_id/Quiz/Mammals/mammalsLevel.dart';
+import 'package:wild_id/Quiz/Marine/marineLevel.dart';
+import 'package:wild_id/Quiz/Reptiles/reptileLevel.dart';
 
-import 'level.dart';
+import 'Level.dart';
+import 'Primate/primateLevel.dart';
 
 class Quiz extends StatefulWidget {
   @override
@@ -140,7 +146,7 @@ class _QuizState extends State<Quiz> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Level(),
+                                builder: (context) => Level(topic: 1),
                               ),
                             );
                           },
@@ -153,7 +159,7 @@ class _QuizState extends State<Quiz> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Level(),
+                                builder: (context) => Level(topic: 2),
                               ),
                             );
                           },
@@ -166,7 +172,7 @@ class _QuizState extends State<Quiz> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Level(),
+                                builder: (context) => Level(topic: 3),
                               ),
                             );
                           },
@@ -185,7 +191,7 @@ class _QuizState extends State<Quiz> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Level(),
+                                builder: (context) => Level(topic: 4),
                               ),
                             );
                           },
@@ -198,7 +204,7 @@ class _QuizState extends State<Quiz> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Level(),
+                                builder: (context) => Level(topic: 5),
                               ),
                             );
                           },
@@ -211,7 +217,7 @@ class _QuizState extends State<Quiz> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Level(),
+                                builder: (context) => Level(topic: 6),
                               ),
                             );
                           },

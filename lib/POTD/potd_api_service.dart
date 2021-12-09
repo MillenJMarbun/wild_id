@@ -3,20 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:wild_id/POTD/potd.dart';
 
-
-Future<AnimalInfo> fetchAnimal() async {
-  final requestUrl = "https://api.jsonbin.io/b/61b053ef0ddbee6f8b1952a9/4";
-
-  final response = await http.get(Uri.parse(requestUrl));
-
-  if (response.statusCode == 200) {
-    return AnimalInfo.fromJson(jsonDecode(response.body));
-  }  else{
-    throw Exception('error loading request URL info.');
-  }
-}
-
-
 class AnimalInfo{
   final date;
   final explanation;
@@ -40,6 +26,19 @@ class AnimalInfo{
     );
   }
 }
+
+
+Future<AnimalInfo> fetchAnimal() async {
+  final requestUrl = "https://api.jsonbin.io/b/61b053ef0ddbee6f8b1952a9/4";
+  final response = await http.get(Uri.parse(requestUrl));
+
+  if (response.statusCode == 200) {
+    return AnimalInfo.fromJson(jsonDecode(response.body));
+  }  else{
+    throw Exception('error loading request URL info.');
+  }
+}
+
 
 
 class AnimalPic extends StatefulWidget {
@@ -75,11 +74,11 @@ class _AnimalPicState extends State<AnimalPic> {
                   title: snapshot.data.title,
                   url: snapshot.data.url,
                 );
-              }else if (snapshot.hasError){
+              }/*else if (snapshot.hasError){
                 return Center(
                   child: Text("${snapshot.error}"),
                 );
-              }
+              }*/
               return Center(
                 child: CircularProgressIndicator(),
               );
