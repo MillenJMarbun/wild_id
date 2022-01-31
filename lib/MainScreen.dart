@@ -1,4 +1,3 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -7,12 +6,11 @@ import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/Home/HomePage.dart';
 import 'package:wild_id/News/news.dart';
 import 'package:wild_id/starter.dart';
-
 import 'POTD/potd.dart';
-import 'POTD/potd_api_service.dart';
 import 'findorg/findorg.dart';
 
 class MainScreen extends StatefulWidget {
+
   @override
   _MainScreenState createState() => _MainScreenState();
 }
@@ -45,8 +43,8 @@ class _MainScreenState extends State<MainScreen> {
   GlobalKey _bottomNavigationKey = GlobalKey();*/
 
   int _page = 0;
+  final screens = const [HomePage(tab : 1), POTD(tab : 2), NewsPage(tab: 3), findOrg(tab: 4)];
 
-  final screens = const [HomePage(tab : 1), AnimalPic(tab: 2), NewsPage(tab: 3), findOrg(tab: 4)];
 
   @override
   Widget build(BuildContext context) {
@@ -54,67 +52,6 @@ class _MainScreenState extends State<MainScreen> {
       onWillPop: _onWillPop,
       child: Scaffold(
         backgroundColor: Colors.grey[100],
-        /*bottomNavigationBar: CurvedNavigationBar(
-          key: _bottomNavigationKey,
-          index: 0,
-          height: 50.0,
-          //50
-          items: <Widget>[
-            Wrap(
-              direction: Axis.vertical,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: [
-                Icon(Icons.home_outlined, size: 28),
-                Text(
-                  'Home',
-                  style: TextStyle(fontSize: 10),
-                )
-              ],
-            ),
-            *//* new Column(
-              children: [*//* *//*
-                Icon(Icons.home_outlined, size: 30),
-                *//* *//*new Text(
-                  'Home',
-                  style: TextStyle(fontSize: 10),
-                )
-              ],
-            ),*//*
-            Wrap(
-              direction: Axis.vertical,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: [
-                Icon(Icons.info_outline, size: 28),
-                Text(
-                  'News',
-                  style: TextStyle(fontSize: 10),
-                )
-              ],
-            ),
-            Wrap(
-              direction: Axis.vertical,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: [
-                Icon(Icons.perm_identity, size: 28),
-                Text(
-                  'My Account',
-                  style: TextStyle(fontSize: 10),
-                )
-              ],
-            ),
-          ],
-          color: Colors.white,
-          buttonBackgroundColor: Colors.grey[100],
-          backgroundColor: maincol,
-          animationCurve: Curves.easeInOut,
-          animationDuration: Duration(milliseconds: 600),
-          onTap: (index) {
-            setState(() {
-              _page = index;
-            });
-          },
-          letIndexChange: (index) => true,
-        ),*/
           bottomNavigationBar: Container(
             decoration: BoxDecoration(
               color: Colors.white,

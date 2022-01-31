@@ -50,6 +50,22 @@ List<Birds> recentList = [
   ),
   Birds(
       category: "Birds",
+      title: "Java Hawk\nEagle",
+      image: "assets/Birds/javaeagle.png",
+      image2: "assets/Birds/javahawkeagle2.jpg",
+      subtitle: "The Javan hawk-eagle is a medium-sized dark brown raptor in the family Accipitridae. Its head and neck are rufous and it is heavily barred black below.",
+      description: "An Indonesian endemic, the Javan hawk-eagle occurs in humid tropical forests of Java. Its range in East Java includes Sempu Island, Bromo Tengger Semeru National Park, Meru Betiri National Park and Alas Purwo National Park. It can also be seen in captivity in zoos like Kebun Binatang Bandung. The Javan hawk-eagle is believed to be monogamous. The female usually lays one egg in a nest high on top of a forest tree. \n The breeding season is from May-August, though breeding has been recorded year-round. \nThe nest is made out of sticks and lined with green leaves, and placed in a large tree in undisturbed forest. One egg is laid and incubated for 47-48 days. Fledging takes 68-72 days, with both parents feeding the young. Pairs breed every two years if nesting is successful, since juveniles may remain close to the nest for a year after they fledge.The diet consists mainly of birds, lizards, fruit bats and mammals.\nThe Javan hawk-eagle is the national bird of Indonesia, where it is commonly referred to as Garuda, from the bird-like creatures in Hindu and Buddhist myths. The scientific name commemorates the Bartels family, who discovered it. Because of the plumage variability of Spizaetus eagles, the Javan hawk-eagle was not recognised as a full species until 1953.\nIt is one of the rarest raptors. Due to ongoing habitat loss, small population size, limited range and hunting in some areas, it is evaluated as Endangered on the IUCN Red List of Threatened Species. It is listed on Appendix II of CITES.\nIn February 2012, there were only around 325 pairs of Javan hawk-eagles living in the wild, mainly in Malangbong, West Java and some in East Java. In Central Java, Mount Merapi has been deforested by eruptions and Dieng Plateau has been deforested by agriculture. The adaptation of the bird is very difficult due to their preference for Rasamala trees and Javanese rats for their diet. Ideally the population should be 1,450 pairs and without conservation the eagle is predicted to go extinct by 2025.",
+      habitat: "Javan Hawk Eagles live in primary forest, secondary forest, tree plantations, and semi-deciduous forest, and they often soar above the treetops when the weather is clear. They usually occur from 500-1,000 meters above sea level but they have been recorded almost at sea level and as high as 3,000 m.\nAs their name indicates, they are endemic to the island of Java, from 6°S to 8°S. Limited to remaining patches of forest, they are scarce within their range—there are an estimated 600-900 individuals, over 14,500 km². Adults are sedentary, though juveniles disperse from their breeding areas.",
+      diet: "Javan Hawk Eagles eat small mammals, birds, snakes, and lizards. Mammals are their preferred prey, which includes tree shrews, squirrels, bats, rats, and other rodents. They usually hunt from a perch, but have been observed swooping down to catch prey on a tree or on the ground. ",
+      color:
+      "f2a65a",
+      color2:
+      "772f1a",
+      loc:
+      "Java Islands"
+  ),
+  Birds(
+      category: "Birds",
       title: "Bali\nMyna",
       image: "assets/Birds/balimynah.png",
       image2: "assets/Birds/Bali-Minah.jpg",

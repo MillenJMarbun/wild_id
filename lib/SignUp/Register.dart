@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/Home/HomePage.dart';
 import 'package:wild_id/Login/Login.dart';
+import 'package:wild_id/MainScreen.dart';
 import 'package:wild_id/model/user_model.dart';
 import '../WelcomeScreen.dart';
 
@@ -18,6 +19,7 @@ class _RegisterState extends State<Register> {
 
   final _auth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
+
   TextEditingController NameController = new TextEditingController();
   TextEditingController emailController = new TextEditingController();
   TextEditingController userNameController = new TextEditingController();
@@ -462,11 +464,11 @@ class _RegisterState extends State<Register> {
   }
 
   postDetailsToFirestore() async {
-    // calling firestore
-    // calling user model
-    // sending  values
+    // calling firebase firestore, user model
+    // and sending those values
 
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+
     User user = _auth.currentUser;
 
     UserModel userModel = UserModel();
@@ -476,6 +478,25 @@ class _RegisterState extends State<Register> {
     userModel.uid = user.uid;
     userModel.fullName = NameController.text;
     userModel.userName = userNameController.text;
+    userModel.primatelvl1 = 0;
+    userModel.primatelvl2 = 0;
+    userModel.primatelvl3 = 0;
+    userModel.mammalslvl1 = 0;
+    userModel.mammalslvl2 = 0;
+    userModel.mammalslvl3 = 0;
+    userModel.birdslvl1 =0;
+    userModel.birdslvl2 =0;
+    userModel.birdslvl3 =0;
+    userModel.reptileslvl1 =0;
+    userModel.reptileslvl2 =0;
+    userModel.reptileslvl3 =0;
+    userModel.amphibianslvl1 =0;
+    userModel.amphibianslvl2 =0;
+    userModel.amphibianslvl3 =0;
+    userModel.marinelvl1 =0;
+    userModel.marinelvl2 =0;
+    userModel.marinelvl3 =0;
+
 
     await firebaseFirestore
         .collection("users")
@@ -485,7 +506,7 @@ class _RegisterState extends State<Register> {
 
     Navigator.pushAndRemoveUntil(
         (context),
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => MainScreen()),
             (route) => false);
   }
 

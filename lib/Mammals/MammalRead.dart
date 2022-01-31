@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/Primates/Primatecard.dart';
 import 'MammalsData.dart';
 
@@ -13,55 +15,166 @@ class MammalRead extends StatelessWidget {
   Widget build(BuildContext context) {
     Color color2 = HexColor(mammal.color);
     return Scaffold(
+        backgroundColor: navy,
         key: _scaffoldKey,
-        body: ListView(
-          children: [
-            Column(
-              children: [
-                SizedBox(height: 30,),
-                Container(
-                  height: 200,
-                  child: Center(child: Image.network(mammal.image2, fit: BoxFit.fill)),
-                ),
-                SizedBox(height: 30,),
-                Container(
-                  width: 230,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      color: color2,
-                      borderRadius: BorderRadius.circular(8)
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.only(top: 20, left: 20),
+                decoration: BoxDecoration(
+                  image: new DecorationImage(
+                    image: new AssetImage(mammal.image2),
+                    fit: BoxFit.cover,
                   ),
-                  child: Center(
-                    child: Text(
-                      mammal.title,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 30
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(30.0),
+                      bottomLeft: Radius.circular(30.0)),
+                ),
+                height: 300,
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 25,),
+                    IconButton(
+                      icon: const Icon(Icons.arrow_back,color: Colors.white,size: 20,),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    SizedBox(height: 90),
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: color2,
+                        ),
+                        /*width: 200,*/
+                        child: Text(mammal.title,
+                            style: GoogleFonts.sora(
+                                textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 40,
+                                    color: Colors.white
+                                )
+                            )
+                        ),
                       ),
-                    ),
-                  ),
+                    )
+                  ],
                 ),
-                SizedBox(height: 20),
-                Container(
-                  padding: EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
-                  decoration: BoxDecoration(
-                      color: color2,
-                      borderRadius: BorderRadius.circular(8)
-                  ),
-                  width: 350,
-                  child: Text(
-                    mammal.content,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16
+              ),
+              SizedBox(height: 20,),
+              Container(
+                padding: EdgeInsets.only(left: 20, top: 10, right: 20, bottom: 10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text("|",
+                            style: GoogleFonts.sora(
+                                textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                    color: color2
+                                )
+                            )
+                        ),
+                        Text("Description",
+                            style: GoogleFonts.sora(
+                                textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                    color: mywhite
+                                )
+                            )
+                        ),
+                      ],
                     ),
-                  ),
+                    SizedBox(height: 5),
+                    Text(mammal.description,
+                        style: GoogleFonts.sora(
+                            textStyle: TextStyle(
+                                fontSize: 12,
+                                color: mywhite
+                            )
+                        )
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      children: [
+                        Text("|",
+                            style: GoogleFonts.sora(
+                                textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                    color: color2
+                                )
+                            )
+                        ),
+                        Text("Habitat",
+                            style: GoogleFonts.sora(
+                                textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                    color: mywhite
+                                )
+                            )
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 5),
+                    Text(mammal.habitat,
+                        style: GoogleFonts.sora(
+                            textStyle: TextStyle(
+                                fontSize: 12,
+                                color: mywhite
+                            )
+                        )
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      children: [
+                        Text("|",
+                            style: GoogleFonts.sora(
+                                textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                    color: color2
+                                )
+                            )
+                        ),
+                        Text("Diet",
+                            style: GoogleFonts.sora(
+                                textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                    color: mywhite
+                                )
+                            )
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 5),
+                    Text(mammal.diet,
+                        style: GoogleFonts.sora(
+                            textStyle: TextStyle(
+                                fontSize: 12,
+                                color: mywhite
+                            )
+                        )
+                    ),
+                    SizedBox(height: 20,),
+                  ],
                 ),
-                SizedBox(height: 40,),
-              ],
-            ),
-
-          ],
+              )
+            ],
+          ),
         )
     );
   }

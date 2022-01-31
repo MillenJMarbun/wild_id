@@ -61,7 +61,7 @@ class MammalCard extends StatelessWidget {
                         size: 20.0,
                       ),
                       SizedBox(width: 10),
-                      Text(mammal.size,
+                      Text(mammal.loc,
                           style: TextStyle(color: Colors.white, fontSize: 12)
                       )
                     ],
@@ -90,14 +90,3 @@ class MammalCard extends StatelessWidget {
   }
 }
 
-class HexColor extends Color {
-  static int _getColorFromHex(String hexColor) {
-    hexColor = hexColor.toUpperCase().replaceAll("#", "");
-    if (hexColor.length == 6) {
-      hexColor = "FF" + hexColor;
-    }
-    return int.parse(hexColor, radix: 16);
-  }
-
-  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
-}

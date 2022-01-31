@@ -1,10 +1,7 @@
 import 'dart:io';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
-import 'package:wild_id/main.dart';
 
 import 'Constants/constants.dart';
 import 'WelcomeScreen.dart';
@@ -14,7 +11,6 @@ final List<String> imgList = [
   'assets/wallpp.png',
   'assets/first.png',
   'assets/second.png',
-  'assets/third.png',
   'assets/fourth.png',
   'assets/five.png',
 ];

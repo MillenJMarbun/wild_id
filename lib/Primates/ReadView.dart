@@ -12,7 +12,6 @@ class ReadView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     Color color2 = HexColor(primate.color);
     return Scaffold(
         backgroundColor: navy,

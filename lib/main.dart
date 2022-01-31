@@ -4,10 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Bird/Birds.dart';
+import 'package:wild_id/MainScreen.dart';
 import 'package:wild_id/SignUp/Register.dart';
 import 'package:wild_id/starter.dart';
 import 'Constants/constants.dart';
 import 'Home/HomePage.dart';
+import 'Mammals/Mammals.dart';
 
 
 Future<void> main() async {

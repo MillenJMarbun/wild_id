@@ -10,7 +10,6 @@ Widget cardWigdet(String txt, String cov) {
       height: 200,
       width: 170,
       decoration: BoxDecoration(
-
         image: DecorationImage(
           image: AssetImage(cov),
           fit: BoxFit.cover,
@@ -24,9 +23,9 @@ Widget cardWigdet(String txt, String cov) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 145),
-          Text("Indonesian \n$txt",
-              style: GoogleFonts.sora
-                (textStyle: TextStyle(
+          Text(txt,
+              style: GoogleFonts.sora(
+                  textStyle: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,

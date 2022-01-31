@@ -2,17 +2,18 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wild_id/Amphibians/Amphibians.dart';
 import 'package:wild_id/Bird/Birds.dart';
-import 'package:wild_id/Home/AnimalClassCard.dart';
 import 'package:wild_id/Mammals/Mammals.dart';
+import 'package:wild_id/Marines/Marines.dart';
 import 'package:wild_id/Primates/primates.dart';
 import 'package:wild_id/Quiz/Quiz.dart';
+import 'package:wild_id/Reptiles/reptile.dart';
 import 'package:wild_id/model/user_model.dart';
 import '../CardWidget.dart';
 import '../Constants/constants.dart';
 import '../Drawer.dart';
 import '../starter.dart';
-import 'AnimalClassAPI.dart';
 
 class HomePage extends StatefulWidget {
   final int tab;
@@ -59,6 +60,7 @@ class _HomePageState extends State<HomePage> {
                Container(
                  height: 200,
                  color: maincol, // 20,20,40
+                 padding: EdgeInsets.symmetric(horizontal: 10),
                  child: Column(
                    mainAxisAlignment: MainAxisAlignment.start,
                    crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                        children: [
                          Padding(
-                           padding: const EdgeInsets.only( top: 10, bottom: 20, right: 70),
+                           padding: const EdgeInsets.only( top: 10, bottom: 20, right: 46),
                            child: Text("Welcome,\n${loggedInUser.userName}", style: GoogleFonts.sora(
                                textStyle: TextStyle(
                                  fontWeight: FontWeight.bold,
@@ -151,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                           );
                            },
                            child: cardWigdet(
-                               'Primates', 'assets/orangutancov.jpeg'),
+                               'Indonesian\nPrimates', 'assets/orangutancov.jpeg'),
                          ),
                          new InkWell(
                            onTap: () {
@@ -163,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                           );
                            },
                            child: cardWigdet(
-                               'Mammals',
+                               'Indonesian\nMammals',
                                'assets/sumatratigercov.jpg'),
                          ),
                        ],
@@ -173,7 +175,8 @@ class _HomePageState extends State<HomePage> {
                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                        children: [
                          new InkWell(
-                           child: cardWigdet('Birds',
+                           child: cardWigdet(
+                               'Indonesian\nBirds',
                                'assets/birdscov.jpg'),
                            onTap: (){
                              Navigator.push(
@@ -187,14 +190,15 @@ class _HomePageState extends State<HomePage> {
                          ),
                          new InkWell(
                            onTap: () {
-                             /*  Navigator.push(
+                               Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Absen(),
+                              builder: (context) => Reptile(),
                             ),
-                          );*/
+                          );
                            },
-                           child: cardWigdet('Reptiles',
+                           child: cardWigdet(
+                               'Indonesian\nReptiles',
                                'assets/lizardcov.jpg'),
                          ),
 
@@ -206,25 +210,25 @@ class _HomePageState extends State<HomePage> {
                        children: [
                          new InkWell(
                            onTap: () {
-                             /* Navigator.push(
+                              Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LearningGame(),
+                              builder: (context) => Amphibians(),
                             ),
-                          );*/
+                          );
                            },
-                           child: cardWigdet('Amphibians', 'assets/indonesianamphibians.jpg'),
+                           child: cardWigdet('Indonesian\nAmphibians', 'assets/indonesianamphibians.jpg'),
                          ),
                          new InkWell(
                            onTap: () {
-                             /*  Navigator.push(
+                               Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Absen(),
+                              builder: (context) => Marines(),
                             ),
-                          );*/
+                          );
                            },
-                           child: cardWigdet('Marine / Aquatic',
+                           child: cardWigdet('Indonesian\nMarine / Aquatic',
                                'assets/indosea.jpg'),
                          ),
 
