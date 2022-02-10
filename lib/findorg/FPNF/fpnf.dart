@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/FPNF/fpnfmodel.dart';
-import 'package:wild_id/findorg/FPNF/fpnfmap.dart';
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Fpnf extends StatefulWidget {
@@ -122,7 +122,12 @@ class _FpnfState extends State<Fpnf> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>FPNFMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -8.682875149241587,
+                                  lng2: 115.51885381534113,
+                                  tit: "FPNF Indonesia",
+                                  snip: "Friends Of The National Park Foundation"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/KSP/kspmodel.dart';
-import 'package:wild_id/findorg/KSP/KSPMap.dart';
-
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 
@@ -124,7 +123,12 @@ class _KspState extends State<Ksp> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>KSPMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -8.62786897773143,
+                                  lng2: 115.1896771711647,
+                                  tit: "KSP Indonesia",
+                                  snip: "Komodo Survival Program Indonesia"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

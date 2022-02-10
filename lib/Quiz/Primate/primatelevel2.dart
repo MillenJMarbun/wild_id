@@ -24,6 +24,198 @@ class _primatelvl2State extends State<primatelvl2> {
 
   @override
   Widget build(BuildContext context) {
+
+    final Questions = [
+      ///question 1
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Primates/siamang2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "What is the major food source of the Indonesian Siamang?",
+          rightAnswer: "Fruits",
+          wrongAnswers: [
+            "Insects",
+            "Small Amphibians",
+            "Tree Leaves"
+          ],
+          onRightAnswer: () {
+              score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+
+
+      ///question 2
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Primates/pygmytarsier2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "How heavy does an average adult pygmy tarsier weigh?",
+          rightAnswer: "57 Grams",
+          wrongAnswers: [
+            "105 Grams",
+            "30 Grams",
+            "200 Grams"
+          ],
+          onRightAnswer: () {
+              score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+
+
+      ///question 3
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Primates/silvergib2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "On average how long does it take for a female Silver Gibbon to give birth?",
+          rightAnswer: "3 years",
+          wrongAnswers: [
+            "18 Months",
+            "6 Months",
+            "2 Years"
+          ],
+          onRightAnswer: () {
+              score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+
+
+      ///question 4
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Primates/pigtailedlangur2.png",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "Where are Pig Tailed Langurs endemic to?",
+          rightAnswer: "Sumatra",
+          wrongAnswers: [
+            "Sulawesi",
+            "Banten",
+            "Borneo"
+          ],
+          onRightAnswer: () {
+              score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+
+      ///question 5
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Primates/Bekantan2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "On Average how large can a Proboscis Monkey Head To Body Length Grow up to?",
+          rightAnswer: "65 - 76 CM",
+          wrongAnswers: [
+            "30 -  60 CM",
+            "100 - 200 CM",
+            "200 - 500 CM"
+          ],
+          onRightAnswer: () {
+              score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+    ];
+    Questions.shuffle();
+
     return Scaffold(
       backgroundColor: quizbg,
       appBar: AppBar(
@@ -45,209 +237,19 @@ class _primatelvl2State extends State<primatelvl2> {
           mainAxisAlignment:MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            ///question 1
             Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: QuizView(
-                image: Container(
-                  width: 200,
-                  height: 150,
-                  child: Image.asset(
-                    "assets/Primates/siamang2.jpg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                showCorrect: true,
-                tagBackgroundColor: mainColor,
-                tagColor: Colors.white,
-                questionTag: "Question 1",
-                answerColor: Colors.white,
-                answerBackgroundColor: tealcol,
-                questionColor: Colors.white,
-                backgroundColor: Colors.deepOrange,
-                width: 400,
-                height: 700,
-                question: "What is the major food source of the Indonesian Siamang?",
-                rightAnswer: "Fruits",
-                wrongAnswers: [
-                  "Insects",
-                  "Small Amphibians",
-                  "Tree Leaves"
-                ],
-                onRightAnswer: () {
-                  setState(() {
-                    score += 20;
-                  });
-                },
-                onWrongAnswer: (){},
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                ]..addAll(Questions),
               ),
             ),
-
-            ///question 2
-            Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: QuizView(
-                image: Container(
-                  width: 200,
-                  height: 150,
-                  child: Image.asset(
-                    "assets/Primates/pygmytarsier2.jpg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                showCorrect: true,
-                tagBackgroundColor: mainColor,
-                tagColor: Colors.white,
-                questionTag: "Question 2",
-                answerColor: Colors.white,
-                answerBackgroundColor: tealcol,
-                questionColor: Colors.white,
-                backgroundColor: Colors.deepOrange,
-                width: 400,
-                height: 700,
-                question: "How heavy does an average adult pygmy tarsier weigh?",
-                rightAnswer: "57 Grams",
-                wrongAnswers: [
-                  "105 Grams",
-                  "30 Grams",
-                  "200 Grams"
-                ],
-                onRightAnswer: () {
-                  setState(() {
-                    score += 20;
-                  });
-                },
-                onWrongAnswer: (){},
-              ),
-            ),
-
-            ///question 3
-            Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: QuizView(
-                image: Container(
-                  width: 200,
-                  height: 150,
-                  child: Image.asset(
-                    "assets/Primates/silvergib2.jpg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                showCorrect: true,
-                tagBackgroundColor: mainColor,
-                tagColor: Colors.white,
-                questionTag: "Question 3",
-                answerColor: Colors.white,
-                answerBackgroundColor: tealcol,
-                questionColor: Colors.white,
-                backgroundColor: Colors.deepOrange,
-                width: 400,
-                height: 700,
-                question: "On average how long does it take for a female Silver Gibbon to give birth?",
-                rightAnswer: "3 years",
-                wrongAnswers: [
-                  "18 Months",
-                  "6 Months",
-                  "2 Years"
-                ],
-                onRightAnswer: () {
-                  setState(() {
-                    score += 20;
-                  });
-                },
-                onWrongAnswer: (){},
-              ),
-            ),
-
-            ///question 4
-            Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: QuizView(
-                image: Container(
-                  width: 200,
-                  height: 150,
-                  child: Image.asset(
-                    "assets/Primates/pigtailedlangur2.png",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                showCorrect: true,
-                tagBackgroundColor: mainColor,
-                tagColor: Colors.white,
-                questionTag: "Question 4",
-                answerColor: Colors.white,
-                answerBackgroundColor: tealcol,
-                questionColor: Colors.white,
-                backgroundColor: Colors.deepOrange,
-                width: 400,
-                height: 700,
-                question: "Where are Pig Tailed Langurs endemic to?",
-                rightAnswer: "Sumatra",
-                wrongAnswers: [
-                  "Sulawesi",
-                  "Banten",
-                  "Borneo"
-                ],
-                onRightAnswer: () {
-                  setState(() {
-                    score += 20;
-                  });
-                },
-                onWrongAnswer: (){},
-              ),
-            ),
-
-            ///question 5
-            Container(
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: QuizView(
-                image: Container(
-                  width: 200,
-                  height: 150,
-                  child: Image.asset(
-                    "assets/Primates/Bekantan2.jpg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                showCorrect: true,
-                tagBackgroundColor: mainColor,
-                tagColor: Colors.white,
-                questionTag: "Question 5",
-                answerColor: Colors.white,
-                answerBackgroundColor: tealcol,
-                questionColor: Colors.white,
-                backgroundColor: Colors.deepOrange,
-                width: 400,
-                height: 700,
-                question: "On Average how large can a Proboscis Monkey Head To Body Length Grow up to?",
-                rightAnswer: "65 - 76 CM",
-                wrongAnswers: [
-                  "30 -  60 CM",
-                  "100 - 200 CM",
-                  "200 - 500 CM"
-                ],
-                onRightAnswer: () {
-                  setState(() {
-                    score += 20;
-                  });
-                },
-                onWrongAnswer: (){},
-              ),
-            ),
-
             Container(
               width: MediaQuery.of(context).size.width,
               height: 100,
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: ElevatedButton(
                   onPressed: () {
-                    setState(() {
                       showModalBottomSheet<void>(
                         context: context,
                         builder: (BuildContext context) {
@@ -287,7 +289,6 @@ class _primatelvl2State extends State<primatelvl2> {
                       if (score > widget.bestScore){
                         updateUser();
                       }
-                    });
                   },
                   child: Text("Finish")),
             ),

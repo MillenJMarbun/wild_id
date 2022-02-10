@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/YABI/yabimodel.dart';
-import 'package:wild_id/findorg/YABI/yabimap.dart';
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 
@@ -123,7 +123,12 @@ class _YabiState extends State<Yabi> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>YABIMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -6.567787844451225,
+                                  lng2: 106.81186893863541,
+                                  tit: "YABI INDONESIA",
+                                  snip: "Yayasan Badak Indonesia"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

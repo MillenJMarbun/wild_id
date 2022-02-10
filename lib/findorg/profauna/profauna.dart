@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/profauna/profaunamode.dart';
-import 'package:wild_id/findorg/profauna/profaunamap.dart';
-
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 
@@ -124,7 +123,12 @@ class _ProfaunaState extends State<Profauna> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfaunaMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -7.963424174591819,
+                                  lng2: 112.6114594355224,
+                                  tit: "PROFAUNA Indonesia",
+                                  snip: "PROFAUNA INDONESIA"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

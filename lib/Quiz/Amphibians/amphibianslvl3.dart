@@ -1,24 +1,20 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/Quiz/Quiz.dart';
-
 import '../../QuizView.dart';
 
-
-class mammallvl1 extends StatefulWidget {
+class amphibianslvl3 extends StatefulWidget {
   @override
-  _mammallvl1State createState() => _mammallvl1State();
+  _amphibianslvl3State createState() => _amphibianslvl3State();
+
   final int bestScore;
-  mammallvl1({Key key, @required this.bestScore}) : super(key: key);
+  amphibianslvl3({Key key, @required this.bestScore}) : super(key: key);
 }
 
-class _mammallvl1State extends State<mammallvl1> {
+class _amphibianslvl3State extends State<amphibianslvl3> {
   Color mainColor = Color(0xff2e344c);
   Color tealcol = Color(0xff146986);
   var score = 0;
@@ -38,7 +34,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/javarhino2.jpg",
+              "assets/Amphibians/sumatrancaecilian2.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -52,12 +48,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "How many rhino species are there in the world?",
-          rightAnswer: "5",
+          question: "How long are the average adult Sumatran Caecilian?",
+          rightAnswer: "176 - 273 mm",
           wrongAnswers: [
-            "10",
-            "25",
-            "37"
+            "290 - 340 mm",
+            "400 - 500 mm",
+            "80 - 140 mm"
           ],
           onRightAnswer: () {
             score += 20;
@@ -76,7 +72,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/sumatraelephant2.jpg",
+              "assets/Amphibians/pantaiselatanfrog2.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -90,12 +86,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "On Average how heavy is the Sumatran Elephant?",
-          rightAnswer: "2,000 - 4,000 kg",
+          question: "What is the average length of an adult Chirixalus Pantaiselatan?",
+          rightAnswer: "25 - 29 mm",
           wrongAnswers: [
-            "500 - 1,000 kg",
-            "300 - 500 kg",
-            "5,000 -7,000 kg"
+            "10 - 15 mm",
+            "30 - 50 mm",
+            "90 - 120 mm"
           ],
           onRightAnswer: () {
             score += 20;
@@ -114,7 +110,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/sumatraelephant2.jpg",
+              "assets/Amphibians/bleedingtoad2.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -128,12 +124,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "What is the current conservation status of the Sumatran Elephant?",
-          rightAnswer: "Critically Endangered",
+          question: "What family of frogs does the Bleeding Toad fall into?",
+          rightAnswer: "Bufonidae",
           wrongAnswers: [
-            "Endangered",
-            "Vulnerable",
-            "Near Threatened"
+            "Batrachylidae",
+            "Brachycephaloides",
+            "Dendrobatoidea"
           ],
           onRightAnswer: () {
             score += 20;
@@ -152,7 +148,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/sumatrantiger2.jpg",
+              "assets/Amphibians/borneoflat2.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -166,12 +162,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "How many tiger species were there in Indonesia before they became extinct?",
-          rightAnswer: "3",
+          question: "What is the current conservation status of the Barborula Kalimantan?",
+          rightAnswer: "Endangered",
           wrongAnswers: [
-            "5",
-            "10",
-            "6"
+            "Critically Endangered",
+            "Near Threatened",
+            "Vulnerable"
           ],
           onRightAnswer: () {
             score += 20;
@@ -190,7 +186,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/javanleopard2.jpg",
+              "assets/Amphibians/limnonectes2.png",
               fit: BoxFit.cover,
             ),
           ),
@@ -204,12 +200,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "What is the name of the animal pictured below?",
-          rightAnswer: "Javan Leopard",
+          question: "What year was the Limnonectes larvaepartus discovered?",
+          rightAnswer: "1994",
           wrongAnswers: [
-            "Sumatran Tiger ",
-            "Clouded Leopard",
-            "Banded Linsang"
+            "1939",
+            "1964",
+            "1972"
           ],
           onRightAnswer: () {
             score += 20;
@@ -223,7 +219,7 @@ class _mammallvl1State extends State<mammallvl1> {
     return Scaffold(
       backgroundColor: quizbg,
       appBar: AppBar(
-        title: Text("Mammals Level 1 Quiz",
+        title: Text("Amphibians Level 3 Quiz",
           style:(
               GoogleFonts.sora(
                   textStyle: TextStyle(
@@ -315,10 +311,9 @@ class _mammallvl1State extends State<mammallvl1> {
     User user = _auth.currentUser;
     return users
         .doc(user.uid)
-        .update({'mammalslvl1': score})
+        .update({'amphibianslvl3': score})
         .then((value) => print("Score Updated"))
         .catchError((error) => print("Failed to update Score: $error"));
   }
 
 }
-

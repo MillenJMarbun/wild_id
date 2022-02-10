@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
-import 'package:wild_id/findorg/WWF/MapScreen.dart';
 import 'package:wild_id/findorg/YAYORIN/yayorinmodel.dart';
-import 'package:wild_id/findorg/YAYORIN/yayorinmap.dart';
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Yayorin extends StatefulWidget {
@@ -123,7 +122,12 @@ class _YayorinState extends State<Yayorin> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>YayorinMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -2.7306964177397384,
+                                  lng2: 111.63879311779117,
+                                  tit: "YAYORIN Indonesia",
+                                  snip: "Yayasan Orangutan Indonesia"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

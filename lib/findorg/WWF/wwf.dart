@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
-import 'package:wild_id/findorg/WWF/MapScreen.dart';
 import 'package:wild_id/findorg/WWF/wwfmodel.dart';
 
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Wwf extends StatefulWidget {
@@ -172,7 +172,12 @@ class _WwfState extends State<Wwf> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>WWFmaps()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -6.296225120701821,
+                                  lng2: 106.83067213960939,
+                                  tit: "WWF Indonesia",
+                                  snip: "WORLD WIDELIFE FUND Indonesia"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

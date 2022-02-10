@@ -22,7 +22,6 @@ class _PrimateLevelState extends State<PrimateLevel>  {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     FirebaseFirestore.instance.collection("users")
         .doc(user.uid).get().then((value){

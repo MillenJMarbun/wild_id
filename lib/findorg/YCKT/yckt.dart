@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
-import 'package:wild_id/findorg/WWF/MapScreen.dart';
 import 'package:wild_id/findorg/YCKT/ycktmodel.dart';
-import 'package:wild_id/findorg/YCKT/ycktmap.dart';
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Yckt extends StatefulWidget {
@@ -123,7 +122,12 @@ class _YcktState extends State<Yckt> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>YCKTMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -7.056263670305398,
+                                  lng2: 106.91124708465884,
+                                  tit: "YCKT Indonesia",
+                                  snip: "Yayasan Cikananga Konservasi Terpadu"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

@@ -19,6 +19,14 @@ class _POTDState extends State<POTD> {
   bool _loading;
   List<Photo> photo;
 
+  @override
+  void initState() {
+    _loading = true;
+    // TODO: implement initState
+    super.initState();
+    getImage();
+  }
+  
   void getImage() async {
     Images images = Images();
     await images.getPhoto();
@@ -26,14 +34,6 @@ class _POTDState extends State<POTD> {
     setState(() {
       _loading = false;
     });
-  }
-
-  @override
-  void initState() {
-    _loading = true;
-    // TODO: implement initState
-    super.initState();
-    getImage();
   }
 
   @override

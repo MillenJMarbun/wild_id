@@ -4,12 +4,16 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:wild_id/Constants/constants.dart';
 
-class SOCPMap extends StatefulWidget {
+class orgMap extends StatefulWidget {
   @override
-  _SOCPMapState createState() => _SOCPMapState();
+  _orgMapState createState() => _orgMapState();
+
+  final double lat2, lng2;
+  final String tit, snip;
+  const orgMap ({ Key key, @required this.lat2, @required this.lng2, @required this.tit, @required this.snip }): super(key: key);
 }
 
-class _SOCPMapState extends State<SOCPMap> {
+class _orgMapState extends State<orgMap> {
   bool _loading = true;
   Location location = new Location();
   bool _serviceEnabled;
@@ -17,7 +21,6 @@ class _SOCPMapState extends State<SOCPMap> {
   LocationData _locationData;
   GoogleMapController mapController; //controller for Google map
   final Set<Marker> markers = new Set(); //markers for google map
-  static const LatLng showLocation = const LatLng(3.5384967483247634, 98.63846818239293); //location to show in map
   var lat, long;
 
   @override
@@ -52,11 +55,12 @@ class _SOCPMapState extends State<SOCPMap> {
 
   @override
   Widget build(BuildContext context) {
+    LatLng showLocation = LatLng(widget.lat2, widget.lng2);
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       appBar: AppBar(
         title: Text(
-          "SOCP Indonesia",
+          widget.tit,
           style: GoogleFonts.sora(
               textStyle: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -71,12 +75,10 @@ class _SOCPMapState extends State<SOCPMap> {
           child: CircularProgressIndicator(),
         )
             : GoogleMap(
-          //Map widget from google_maps_flutter package
           zoomGesturesEnabled: true,
-          //enable Zoom in, out on map
           initialCameraPosition: CameraPosition(
             //innital position in map
-            target: showLocation, //initial position
+            target: LatLng(widget.lat2, widget.lng2), //initial position
             zoom: 10, //initial zoom level
           ),
           markers: getmarkers(),
@@ -97,22 +99,23 @@ class _SOCPMapState extends State<SOCPMap> {
   Set<Marker> getmarkers() {
     //markers to place on map
     setState(() {
-      markers.add(Marker(
+      markers.add(
+          Marker(
+            markerId: MarkerId("1"),
         //add first marker
-        markerId: MarkerId(showLocation.toString()),
-        position: showLocation, //position of marker
+        position: LatLng(widget.lat2, widget.lng2), //position of marker
         infoWindow: InfoWindow(
           //popup info
-          title: 'SOCP Indonesia',
-          snippet: 'Sumatran Orangutan Conservation Programme',
+          title: widget.tit,
+          snippet: widget.snip,
         ),
         icon: BitmapDescriptor.defaultMarker, //Icon for Marker
       ));
 
       markers.add(
           Marker(
+            markerId: MarkerId("2"),
             //add second marker
-            markerId: MarkerId(showLocation.toString()),
             position: LatLng(lat, long),
             //position of marker
             infoWindow: InfoWindow(

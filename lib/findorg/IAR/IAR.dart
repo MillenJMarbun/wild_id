@@ -1,9 +1,8 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/IAR/IARmodel.dart';
-import 'package:wild_id/findorg/IAR/IARMap.dart';
 import 'package:flutter/material.dart';
-
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Iar extends StatefulWidget {
@@ -123,7 +122,12 @@ class _IarState extends State<Iar> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>IARMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -6.662460679245682,
+                                  lng2: 106.72881303863542,
+                                  tit: "IAR Indonesia",
+                                  snip: "International Animal Rescue Indonesia"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

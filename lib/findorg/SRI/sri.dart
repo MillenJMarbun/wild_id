@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
-import 'package:wild_id/findorg/WWF/MapScreen.dart';
 import 'package:wild_id/findorg/SRI/srimodel.dart';
-import 'package:wild_id/findorg/SRI/SRIMap.dart';
-
-
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Sri extends StatefulWidget {
@@ -125,7 +122,12 @@ class _SriState extends State<Sri> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>SRIMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: 0.8585107764184434,
+                                  lng2: 99.55844749204685,
+                                  tit: "SRI Indonesia",
+                                  snip: "Sumatra Rainforest Institute"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

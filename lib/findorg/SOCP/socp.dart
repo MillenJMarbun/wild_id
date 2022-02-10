@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
-import 'package:wild_id/findorg/SOCP/SOCPMap.dart';
 import 'package:wild_id/findorg/SOCP/socpmodel.dart';
-
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Socp extends StatefulWidget {
@@ -123,7 +122,12 @@ class _SocpState extends State<Socp> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>SOCPMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: 3.5384967483247634,
+                                  lng2: 98.63846818239293,
+                                  tit: "SOCP Indonesia",
+                                  snip: "Sumatran Orangutan Conservation Program"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,18 +6,18 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/Quiz/Quiz.dart';
-
 import '../../QuizView.dart';
 
 
-class mammallvl1 extends StatefulWidget {
+class reptilelvl2 extends StatefulWidget {
   @override
-  _mammallvl1State createState() => _mammallvl1State();
+  _reptilelvl2State createState() => _reptilelvl2State();
+
   final int bestScore;
-  mammallvl1({Key key, @required this.bestScore}) : super(key: key);
+  reptilelvl2({Key key, @required this.bestScore}) : super(key: key);
 }
 
-class _mammallvl1State extends State<mammallvl1> {
+class _reptilelvl2State extends State<reptilelvl2> {
   Color mainColor = Color(0xff2e344c);
   Color tealcol = Color(0xff146986);
   var score = 0;
@@ -38,7 +37,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/javarhino2.jpg",
+              "assets/Reptiles/bandedkrait.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -52,12 +51,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "How many rhino species are there in the world?",
-          rightAnswer: "5",
+          question: "What is the sleeping habit of a Banded Krait?",
+          rightAnswer: "Nocturnal",
           wrongAnswers: [
-            "10",
-            "25",
-            "37"
+            "Diurnal",
+            "Crepuscular",
+            "Matutinal "
           ],
           onRightAnswer: () {
             score += 20;
@@ -76,7 +75,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/sumatraelephant2.jpg",
+              "assets/Reptiles/komodo2.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -90,12 +89,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "On Average how heavy is the Sumatran Elephant?",
-          rightAnswer: "2,000 - 4,000 kg",
+          question: "What year was the Komodo Dragon first officially documented?",
+          rightAnswer: "1910",
           wrongAnswers: [
-            "500 - 1,000 kg",
-            "300 - 500 kg",
-            "5,000 -7,000 kg"
+            "1887",
+            "1935",
+            "1859"
           ],
           onRightAnswer: () {
             score += 20;
@@ -114,7 +113,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/sumatraelephant2.jpg",
+              "assets/Reptiles/greenturtle2.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -128,12 +127,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "What is the current conservation status of the Sumatran Elephant?",
-          rightAnswer: "Critically Endangered",
+          question: "What is the heaviest recorded weight of the green sea turtle?",
+          rightAnswer: "315 kg",
           wrongAnswers: [
-            "Endangered",
-            "Vulnerable",
-            "Near Threatened"
+            "80 kg",
+            "156 kg",
+            "423 kg"
           ],
           onRightAnswer: () {
             score += 20;
@@ -152,7 +151,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/sumatrantiger2.jpg",
+              "assets/Reptiles/forstentortoise2.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -166,12 +165,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "How many tiger species were there in Indonesia before they became extinct?",
-          rightAnswer: "3",
+          question: "Where in Indonesia is the Forsten Tortoise native to?",
+          rightAnswer: "Sulawesi",
           wrongAnswers: [
-            "5",
-            "10",
-            "6"
+            "Borneo",
+            "Java",
+            "Papua"
           ],
           onRightAnswer: () {
             score += 20;
@@ -190,7 +189,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/javanleopard2.jpg",
+              "assets/Reptiles/tokaygecko.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -204,12 +203,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "What is the name of the animal pictured below?",
-          rightAnswer: "Javan Leopard",
+          question: "How long does the average tokay gecko reach to?",
+          rightAnswer: "25-30cm",
           wrongAnswers: [
-            "Sumatran Tiger ",
-            "Clouded Leopard",
-            "Banded Linsang"
+            "40 - 50 cm",
+            "5 - 10 cm",
+            "15 - 20 cm"
           ],
           onRightAnswer: () {
             score += 20;
@@ -223,7 +222,7 @@ class _mammallvl1State extends State<mammallvl1> {
     return Scaffold(
       backgroundColor: quizbg,
       appBar: AppBar(
-        title: Text("Mammals Level 1 Quiz",
+        title: Text("Reptiles Level 2 Quiz",
           style:(
               GoogleFonts.sora(
                   textStyle: TextStyle(
@@ -315,10 +314,9 @@ class _mammallvl1State extends State<mammallvl1> {
     User user = _auth.currentUser;
     return users
         .doc(user.uid)
-        .update({'mammalslvl1': score})
+        .update({'reptileslvl2': score})
         .then((value) => print("Score Updated"))
         .catchError((error) => print("Failed to update Score: $error"));
   }
 
 }
-

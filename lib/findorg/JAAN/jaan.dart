@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/JAAN/jaanmodel.dart';
-import 'package:wild_id/findorg/JAAN/jaanmap.dart';
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Jaan extends StatefulWidget {
@@ -122,7 +122,12 @@ class _JaanState extends State<Jaan> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>JAANMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -6.273161380666172,
+                                  lng2: 106.82142826894236,
+                                  tit: "JAAN Indonesia",
+                                  snip: "Jakarta Animal Aid Indonesia"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

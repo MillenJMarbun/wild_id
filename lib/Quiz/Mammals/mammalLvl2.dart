@@ -7,18 +7,17 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/Quiz/Quiz.dart';
-
 import '../../QuizView.dart';
 
 
-class mammallvl1 extends StatefulWidget {
+class mammallvl2 extends StatefulWidget {
   @override
-  _mammallvl1State createState() => _mammallvl1State();
+  _mammallvl2State createState() => _mammallvl2State();
   final int bestScore;
-  mammallvl1({Key key, @required this.bestScore}) : super(key: key);
+  mammallvl2({Key key, @required this.bestScore}) : super(key: key);
 }
 
-class _mammallvl1State extends State<mammallvl1> {
+class _mammallvl2State extends State<mammallvl2> {
   Color mainColor = Color(0xff2e344c);
   Color tealcol = Color(0xff146986);
   var score = 0;
@@ -52,12 +51,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "How many rhino species are there in the world?",
-          rightAnswer: "5",
+          question: "How long does a mother Javan rhinoceros suckle her young?",
+          rightAnswer: "1 - 2 Years",
           wrongAnswers: [
-            "10",
-            "25",
-            "37"
+            "6 Months",
+            "3 Years",
+            "2.5 Years"
           ],
           onRightAnswer: () {
             score += 20;
@@ -68,82 +67,6 @@ class _mammallvl1State extends State<mammallvl1> {
 
 
       ///question 2
-      Container(
-        width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: QuizView(
-          image: Container(
-            width: 200,
-            height: 150,
-            child: Image.asset(
-              "assets/Mammals/sumatraelephant2.jpg",
-              fit: BoxFit.cover,
-            ),
-          ),
-          showCorrect: true,
-          tagBackgroundColor: mainColor,
-          tagColor: Colors.white,
-          questionTag: "",
-          answerColor: Colors.white,
-          answerBackgroundColor: tealcol,
-          questionColor: Colors.white,
-          backgroundColor: Colors.deepOrange,
-          width: 400,
-          height: 700,
-          question: "On Average how heavy is the Sumatran Elephant?",
-          rightAnswer: "2,000 - 4,000 kg",
-          wrongAnswers: [
-            "500 - 1,000 kg",
-            "300 - 500 kg",
-            "5,000 -7,000 kg"
-          ],
-          onRightAnswer: () {
-            score += 20;
-          },
-          onWrongAnswer: (){},
-        ),
-      ),
-
-
-      ///question 3
-      Container(
-        width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-        child: QuizView(
-          image: Container(
-            width: 200,
-            height: 150,
-            child: Image.asset(
-              "assets/Mammals/sumatraelephant2.jpg",
-              fit: BoxFit.cover,
-            ),
-          ),
-          showCorrect: true,
-          tagBackgroundColor: mainColor,
-          tagColor: Colors.white,
-          questionTag: "",
-          answerColor: Colors.white,
-          answerBackgroundColor: tealcol,
-          questionColor: Colors.white,
-          backgroundColor: Colors.deepOrange,
-          width: 400,
-          height: 700,
-          question: "What is the current conservation status of the Sumatran Elephant?",
-          rightAnswer: "Critically Endangered",
-          wrongAnswers: [
-            "Endangered",
-            "Vulnerable",
-            "Near Threatened"
-          ],
-          onRightAnswer: () {
-            score += 20;
-          },
-          onWrongAnswer: (){},
-        ),
-      ),
-
-
-      ///question 4
       Container(
         width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -166,12 +89,88 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "How many tiger species were there in Indonesia before they became extinct?",
-          rightAnswer: "3",
+          question: "On Average how long are Adult Sumatran Tigers?",
+          rightAnswer: "2.2 to 2.55 m",
           wrongAnswers: [
-            "5",
-            "10",
-            "6"
+            "1.2 to 1.55 m",
+            "1.5 to 2.1 m",
+            "3 to 4.11 m kg"
+          ],
+          onRightAnswer: () {
+            score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+
+
+      ///question 3
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Mammals/linsang2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "What is the Banded Linsang Diet?",
+          rightAnswer: "Carnivore",
+          wrongAnswers: [
+            "Insetivore",
+            "Herbivore",
+            "Omnivore"
+          ],
+          onRightAnswer: () {
+            score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+
+
+      ///question 4
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Mammals/tapir2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "What is the current Conservation Status of the Malayan Tapir?",
+          rightAnswer: "Endangered",
+          wrongAnswers: [
+            "Near Threatened",
+            "Critically Endangered",
+            "Vulnerable"
           ],
           onRightAnswer: () {
             score += 20;
@@ -190,7 +189,7 @@ class _mammallvl1State extends State<mammallvl1> {
             width: 200,
             height: 150,
             child: Image.asset(
-              "assets/Mammals/javanleopard2.jpg",
+              "assets/Mammals/babirusa2.jpg",
               fit: BoxFit.cover,
             ),
           ),
@@ -204,12 +203,12 @@ class _mammallvl1State extends State<mammallvl1> {
           backgroundColor: Colors.deepOrange,
           width: 400,
           height: 700,
-          question: "What is the name of the animal pictured below?",
-          rightAnswer: "Javan Leopard",
+          question: "Which of these locations are Babirusa native to?",
+          rightAnswer: "Sulawesi",
           wrongAnswers: [
-            "Sumatran Tiger ",
-            "Clouded Leopard",
-            "Banded Linsang"
+            "Sumatra",
+            "Java",
+            "Papua"
           ],
           onRightAnswer: () {
             score += 20;
@@ -223,7 +222,7 @@ class _mammallvl1State extends State<mammallvl1> {
     return Scaffold(
       backgroundColor: quizbg,
       appBar: AppBar(
-        title: Text("Mammals Level 1 Quiz",
+        title: Text("Mammals Level 2 Quiz",
           style:(
               GoogleFonts.sora(
                   textStyle: TextStyle(
@@ -315,7 +314,7 @@ class _mammallvl1State extends State<mammallvl1> {
     User user = _auth.currentUser;
     return users
         .doc(user.uid)
-        .update({'mammalslvl1': score})
+        .update({'mammalslvl2': score})
         .then((value) => print("Score Updated"))
         .catchError((error) => print("Failed to update Score: $error"));
   }

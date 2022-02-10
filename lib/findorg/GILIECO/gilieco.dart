@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/GILIECO/giliecomodel.dart';
-import 'package:wild_id/findorg/GILIECO/giliecomap.dart';
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Gilieco extends StatefulWidget {
@@ -122,7 +122,12 @@ class _GiliecoState extends State<Gilieco> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>GiliecoMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -8.353233493719602,
+                                  lng2: 116.04234606895949,
+                                  tit: "GILIECO TRUST",
+                                  snip: "GILIECO Trust Indonesia"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

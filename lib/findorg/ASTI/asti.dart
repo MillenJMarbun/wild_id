@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/ASTI/astimodel.dart';
-import 'package:wild_id/findorg/ASTI/astimap.dart';
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Asti extends StatefulWidget {
@@ -122,7 +122,12 @@ class _AstiState extends State<Asti> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>ASTIMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -6.684662417016229,
+                                  lng2: 106.90244281534115,
+                                  tit: "Asti Indonesia",
+                                  snip: "Animal Sanctuary Trust Indonesia"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

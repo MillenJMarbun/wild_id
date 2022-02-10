@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/SOS/sosmodel.dart';
-
+import '../orgMap.dart';
 import '../orgsTile.dart';
-import 'SOSMap.dart';
 
 class Sos extends StatefulWidget {
   @override
@@ -140,7 +139,12 @@ class _SosState extends State<Sos> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>SOSMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: 51.73597518416371,
+                                  lng2: -1.2933800081231006,
+                                  tit: "SOS Indonesia",
+                                  snip: "Sumatra Orangutan Survival"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

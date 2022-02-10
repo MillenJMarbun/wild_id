@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:search_page/search_page.dart';
 import 'package:wild_id/Amphibians/Amphibians.dart';
 import 'package:wild_id/Bird/Birds.dart';
 import 'package:wild_id/Mammals/Mammals.dart';
@@ -27,6 +28,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  static List<String> screens = [
+    'Indonesian Primates',
+    'Indonesian Mammals',
+    'Indonesian Birds',
+    'Indonesian Reptiles',
+    'Indonesian Amphibians',
+    'Indonesian Marine / Aquatic',
+    'Quiz Game'
+  ];
+
+  void navigate(screenName) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => screenName,
+      ),
+    );
+  }
+
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   int _page = 0;
   GlobalKey _bottomNavigationKey = GlobalKey();
@@ -45,6 +66,8 @@ class _HomePageState extends State<HomePage> {
       setState(() {});
         });
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -76,21 +99,84 @@ class _HomePageState extends State<HomePage> {
                            onPressed: () => _scaffoldKey.currentState.openDrawer(),
                          ),
                          SizedBox(width: 10),
-                         new Container(
-                           padding: EdgeInsets.all(4),
-                           height: 30,
-                           width: MediaQuery.of(context).size.width / 1.3,
-                           decoration: BoxDecoration(
-                             color: Colors.white,
-                             borderRadius:
-                             BorderRadius.all(Radius.circular(5.0)),
+                         GestureDetector(
+                           onTap: () => showSearch(
+                             context: context,
+                             delegate: SearchPage(
+                               barTheme: ThemeData(
+                                 primarySwatch: Colors.teal,
+                               ),
+                               onQueryUpdate: (s) => print(s),
+                               items: screens,
+                               searchLabel: 'Search Wildlife',
+                               suggestion: Center(
+                                 child: Text('Search Wildlife'),
+                               ),
+                               failure: Center(
+                                 child: Text('No Pages found'),
+                               ),
+                               filter: (screen) => [screen],
+                               builder: (screen) => GestureDetector(
+                                 onTap: () {
+                                   screen == 'Indonesian Primates'
+                                       ? navigate(Primates())
+                                       : screen == 'Indonesian Mammals'
+                                       ? navigate(Mammals())
+                                       : screen == 'Indonesian Birds'
+                                       ? navigate(Birds())
+                                       : screen == 'Indonesian Reptiles'
+                                       ? navigate(Reptile())
+                                       : screen == 'Indonesian Amphibians'
+                                       ? navigate(Amphibians())
+                                       : screen == 'Indonesian Marine / Aquatic'
+                                       ? navigate(Marines())
+                                       : navigate(Quiz());
+                                 },
+                                 child: ListTile(
+                                   title: Text(screen),
+                                   trailing: screen == 'Indonesian Primates'
+                                       ? Image.asset('assets/Drawer/primate.png')
+                                       : screen == 'Indonesian Mammals'
+                                       ? Image.asset('assets/Drawer/mammals.png')
+                                       : screen == 'Indonesian Birds'
+                                       ? Image.asset('assets/Drawer/bird.png')
+                                       : screen == 'Indonesian Reptiles'
+                                       ? Image.asset('assets/Drawer/reptiles.png')
+                                       : screen == 'Indonesian Amphibians'
+                                       ? Image.asset('assets/Drawer/amphibians.png')
+                                       : screen == 'Indonesian Marine / Aquatic'
+                                       ? Image.asset('assets/Drawer/marine.png')
+                                       : Icon(Icons.school, color: Colors.blue,
+                                   ),
+                                 ),
+                               ),
+                             ),
                            ),
-                           child: Row(
-                             children: [
-                               Icon(Icons.search),
-                               SizedBox(width: 10),
-                               Text('Search Wildlife', style: GoogleFonts.lexendDeca()),
-                             ],
+                           child: new Container(
+                             //container for search bar
+                             padding: EdgeInsets.only(right: 10), // 20,20,40
+                             child: new Row(
+                               children: [
+                                 new Container(
+                                   padding: EdgeInsets.all(5),
+                                   height: 32,
+                                   width: MediaQuery.of(context).size.width / 1.3,
+                                   decoration: BoxDecoration(
+                                     color:Colors.grey[200],
+                                     borderRadius:
+                                     BorderRadius.all(Radius.circular(10)),
+                                   ),
+                                   child: Row(
+                                     children: [
+                                       Icon(Icons.search),
+                                       SizedBox(width: 10),
+                                       Text('Search Wildlife', style: GoogleFonts.lexendDeca()),
+                                     ],
+                                   ),
+                                 ),
+
+                               ],
+                             ),
                            ),
                          ),
                        ],

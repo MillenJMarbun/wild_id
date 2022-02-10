@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/LINI/linimodel.dart';
-import 'package:wild_id/findorg/LINI/linimap.dart';
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Lini extends StatefulWidget {
@@ -122,7 +122,12 @@ class _LiniState extends State<Lini> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>LiniMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -8.691027193375279,
+                                  lng2: 115.23960031534112,
+                                  tit: "YAYASAN LINI",
+                                  snip: "YAYASAN LINI INDONESIA"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

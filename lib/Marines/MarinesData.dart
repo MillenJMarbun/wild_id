@@ -75,6 +75,31 @@ List<Marines> recentList = [
   Marines(
       category: "Marines",
       title:
+      "Lion\nFish",
+      image:
+      "assets/Marines/lionfish.png",
+      image2:
+      "assets/Marines/lionfish.jpg",
+      subtitle:
+      "Lionfish, native to the Indo-Pacific. They are characterized by conspicuous warning coloration with red, white, creamy, or black bands, showy pectoral fins, and venomous, spiky fin rays",
+      description:
+      "Pterois is a genus of venomous marine fish, commonly known as lionfish, native to the Indo-Pacific. Also called firefish, turkeyfish, tastyfish, or butterfly-cod, it is characterized by conspicuous warning coloration with red, white, creamy, or black bands, showy pectoral fins, and venomous, spiky fin rays. Pterois radiata, Pterois volitans, and Pterois miles are the most commonly studied species in the genus. Pterois species are popular aquarium fish.\n\nPterois are harmful to humans. Juvenile lionfish have a unique tentacle located above their eye sockets that varies in phenotype between species. The evolution of this tentacle is suggested to serve to continually attract new prey; studies also suggest it plays a role in sexual selection\n\nPterois species can live from 5 to 15 years and have complex courtship and mating behaviors.Females release two mucus-filled egg clusters frequently, which can contain as many as 15,000 eggs.] Studies on Pterois reproductive habits have increased significantly in the past decade. All the species are aposematic; they have conspicuous coloration with boldly contrasting stripes and wide fans of projecting spines, advertising their ability to defend themselves.\n\nLionfish are known for their venomous fin rays, an uncommon feature among reef-dwelling fish along the American East Coast and Caribbean. The potency of their venom makes them excellent predators and hazardous to fishermen and divers. Pterois venom produced negative inotropic and chronotropic effects when tested in both frog and clam hearts[29] and has a depressive effect on rabbit blood pressure. These results are thought to be due to nitric oxide release.[9] In humans, Pterois venom can cause systemic effects such as extreme pain, nausea, vomiting, fever, breathing difficulties, convulsions, dizziness, redness on the affected area, headache, numbness, paresthesia (pins and needles), heartburn, diarrhea, and sweating. Rarely, such stings can cause temporary paralysis of the limbs, heart failure, and even death. Fatalities are common in very young children, the elderly, those with a weak immune system, or those who are allergic to their venom. Their venom is rarely fatal to healthy adults, but some species have enough venom to produce extreme discomfort for a period of several days. Moreover, Pterois venom poses a danger to allergic victims as they may experience anaphylaxis, a serious and often life-threatening condition that requires immediate emergency medical treatment. Severe allergic reactions to Pterois venom include chest pain, severe breathing difficulties, a drop in blood pressure, swelling of the tongue, sweating, runny nose, or slurred speech. Such reactions can be fatal if not treated. However, Lionfish are edible if prepared correctly.",
+
+
+      habitat: "The lionfish is a predator native to the Indo-Pacific. It aggressively preys on small fish and invertebrates, which severely threatens the natural competition of aquatic life in the ocean. They are habitat generalists and can be found around the seaward edge of shallow coral reefs, in lagoons, on rocky substrates, and on mesophotic reefs. These fish generally are very adaptable to their environment and can live in areas of varying salinity, temperatures, and depths,  They are also frequently found in turbid inshore areas and harbors, and have a generally hostile attitude and are territorial toward other reef fish. They are commonly found in shallow waters from the surface down to past 100 m (330 ft) depth, although lionfish have in several locations been recorded to 300 m depth. Many universities in the Indo-Pacific have documented reports of Pterois aggression toward divers and researchers.",
+
+      diet: "According to a study that involved the dissection of over 1,400 lionfish stomachs from Bahamian to North Carolinian waters, Pterois fish prey mostly on small fish, invertebrates, and mollusks in large amounts, with some specimens' stomachs containing up to six different species of prey. The amount of prey in lionfish stomachs over the course of a day suggests lionfish feed most actively from 7:00–11:00 am, and decrease feeding throughout the afternoon. Lionfish are skilled hunters, using specialized bilateral swim bladder muscles to provide precise control of location in the water column, allowing the fish to alter its center of gravity to better attack prey. The lionfish then spreads its large pectoral fins and swallows its prey in a single motion. They blow jets of water while approaching prey, apparently to disorient them. In addition to confusing prey, these jets of water also alter the orientation of the prey so that the smaller fish is facing the lionfish. This results in a higher degree of predatory efficiency as head-first capture is easier for the lionfish\n\nAside from instances of larger lionfish individuals engaging in cannibalism on smaller individuals, adult lionfish have few identified natural predators, likely from the effectiveness of their venomous spines. Moray eels (family Muraenidae), bluespotted cornetfish (Fistularia commersonii), and large groupers, such as the tiger grouper (Mycteroperca tigris) and Nassau grouper (Epinephelus striatus), have been observed preying on lionfish. It remains unknown how commonly these predators prey on lionfish. Sharks are also believed to be capable of preying on lionfish with no ill effects from their spines.[24] Park officials of the Roatan Marine Park in Honduras have attempted to train sharks to feed on lionfish as of 2011 in an attempt to control the invasive populations in the Caribbean. The Bobbit worm, an ambush predator, has been filmed preying upon lionfish in Indonesia. Predators of larvae and juvenile lionfish remain unknown, but may prove to be the primary limiting factor of lionfish populations in their native range.Parasites of lionfish have rarely been observed, and are assumed to be infrequent. They include isopods and leeches.",
+      color:
+      "d2a813",
+      color2:
+      "000000",
+      loc:
+      "Indo - Pacific Sea"
+  ),
+
+  Marines(
+      category: "Marines",
+      title:
       "Banggai\nCardinalfish",
       image:
       "assets/Marines/banggaicardinalfish.png",
@@ -162,28 +187,6 @@ List<Marines> recentList = [
   Marines(
       category: "Marines",
       title:
-      "Indonesian\nDugongs",
-      image:
-      "assets/Marines/irwadydolphin.png",
-      image2:
-      "assets/Marines/irwadydolphin2.png",
-      subtitle:
-      "The Irrawaddy dolphin is a euryhaline species of oceanic dolphin found in discontinuous subpopulations near sea coasts and in estuaries and rivers in parts of Southeast Asia.",
-      description:
-      "The Irrawaddy dolphin's colour is grey to dark slate blue, paler underneath, without a distinctive pattern. The dorsal fin is small and rounded behind the middle of the back. The forehead is high and rounded; the beak is lacking. The front of its snout is blunt. The flippers are broad and rounded. The finless porpoise (Neophocaena phocaenoides) is similar and has no back fin; the humpback dolphin (Sousa chinensis) is larger, and has a longer beak and a larger dorsal fin.[4] It ranges in weight from 90 to 200 kg (200 to 440 lb) with a length of 2.3 m (7.5 ft) at full maturity. Maximum recorded length is 2.75 m (9.0 ft) of a male in Thailand.The Irrawaddy dolphin is similar to the beluga in appearance, though most closely related to the killer whale. It has a large melon and a blunt, rounded head, and the beak is indistinct. Its dorsal fin, located about two-thirds posterior along the back, is short, blunt, and triangular. The flippers are long and broad. It is lightly colored all over, but slightly more white on the underside than the back. Unlike any other dolphin, the Irrawaddy's U-shaped blowhole is on the left of the midline and opens towards the front of the dolphin. Its short beak appears very different from those of other dolphins, and its mouth is known for having 12-19 peg-like teeth on each side of the jaws.\nCommunication is carried out with clicks, creaks, and buzzes at a dominant frequency of about 60  kilohertz, which is thought to be used for echolocation. Bony fish and fish eggs, cephalopods, and crustaceans are taken as food. Observations of captive animals indicate food may be taken into the mouth by suction. Irrawaddy dolphins are capable of squirting streams of water that can reach up to 1.5 metres (4 ft 11 in); this distinct behaviour has been known for herding fish into a general area for hunting.[8] They do this sometimes while spyhopping and during feeding, apparently to expel water ingested during fish capture or possibly to herd fish. Some Irrawaddy dolphins kept in captivity have been trained to do spyhopping on command. The Irrawaddy dolphin is a slow swimmer, but swimming speeds of 20–25 kilometres per hour (12–16 mph) were reported when dolphins were being chased in a boat. Irrawaddy dolphins are shy of boats, not known to bow-ride, and generally dive when alarmed. They are relatively slow moving but can sometimes be seen spyhopping and rolling to one side while waving a flipper and occasionally breaching. They are generally found in groups of 2-3 animals, though sometimes as many as 25 individuals have been known to congregate in deep pools. Groups of fewer than six individuals are most common, but sometimes up to 15 dolphins are seen together. Traveling and staying in groups not only enables Irrawaddy dolphins to hunt, but it also creates and maintains social bonds and allows copulation to occur.\nIt surfaces in a rolling fashion and lifts its tail fluke clear of the water only for a deep dive. Deep dive times range from 30 to 150 seconds to 12 minutes. When 277 group dives were timed (time of disappearance of the last dolphin in the group to the emergence of the first dolphin in the group) in Laos, mean duration was 115.3  seconds with a range of 19  seconds to 7.18  minutes.\nInterspecific competition has been observed when Irrawaddy dolphins were forced inshore and excluded by more specialized dolphins. When captive humpback dolphins (Sousa chinensis) and Irrawaddy dolphins were held together, reportedly the Irrawaddy dolphins were frequently chased and confined to a small portion of the tank by the dominant humpbacks. In Chilika Lake, local fishers say when Irrawaddy dolphins and bottlenose dolphins meet in the outer channel, the former get frightened and are forced to return toward the lake",
-      habitat: "Although sometimes called the Irrawaddy river dolphin, it is not a true river dolphin, but an oceanic dolphin that lives in brackish water near coasts, river mouths, and estuaries. It has established subpopulations in freshwater rivers, There is an estimate amounr of dolphins in Indonesia: ~70 (CR), in a 420-km (260-mi) stretch of the freshwater Mahakam River",
-      diet: "There are plenty of food items that this dolphin feeds upon. They include fish, crustaceans, and cephalopods. During foraging periods, herds of about 7 dolphins will circle around prey and trap their victim. These prey entrapments occur slightly below the water surface level",
-      color:
-      "7f8c8d",
-      color2:
-      "d3d3d3",
-      loc:
-      "Borneo & Kalimantan"
-  ),
-
-  Marines(
-      category: "Marines",
-      title:
       "Indonesian\nAngleshark",
       image:
       "assets/Marines/angleshark.png",
@@ -232,7 +235,7 @@ List<Marines> recentList = [
       image:
       "assets/Marines/indoelectricray.png",
       image2:
-      "assets/Marines/indoelectricray2.jpg",
+      "assets/Marines/indoelectricray2.jpeg",
       subtitle:
       "Indonesia electric ray or torpedo skates was found around Java Island to Komodo Island waters.They are slow-moving bottom dwellers of generating electricity as a defense and feeding mechanism.",
       description:
@@ -268,8 +271,5 @@ List<Marines> recentList = [
       loc:
       "Borneo & Kalimantan"
   ),
-
-
-
 
 ];

@@ -134,6 +134,27 @@ List<Reptiles> recentList = [
 
   Reptiles(
       category: "Reptiles",
+      title: "Green\nTurtles",
+      image:
+      "assets/Reptiles/greenturtle.png",
+      image2:
+      'assets/Reptiles/greenturtle2.jpg',
+      subtitle:
+      "The green sea turtle is a species of large sea turtle of the family Cheloniidae. It is the only species in the genus Chelonia.",
+      description:
+      "The green sea turtle (Chelonia mydas), is a species of large sea turtle of the family Cheloniidae. It is the only species in the genus Chelonia. Its range extends throughout tropical and subtropical seas around the world, with two distinct populations in the Atlantic and Pacific Oceans, but it is also found in the Indian Ocean. The common name refers to the usually green fat found beneath its carapace, not to the color of its carapace, which is olive to black.\n\nIts appearance is that of a typical sea turtle. C. mydas has a dorsoventrally flattened body, a beaked head at the end of a short neck, and paddle-like arms well-adapted for swimming. Adult green turtles grow to 1.5 metres (5 ft) long. The average weight of mature individuals is 68–190 kg (150–419 lb) and the average carapace length is 78–112 cm (31–44 in). Exceptional specimens can weigh 315 kg (694 lb) or even more, with the largest known C. mydas having weighed 395 kg (871 lb) and measured 153 cm (60 in) in carapace length. Anatomically, a few characteristics distinguish the green turtle from the other members of its family. Unlike its close relative the hawksbill turtle, the green turtle's snout is very short and its beak is unhooked. The neck cannot be pulled into the shell. The sheath of the turtle's upper jaw possesses a denticulated edge, while its lower jaw has stronger, serrated, more defined denticulation. The dorsal surface of the turtle's head has a single pair of prefrontal scales. Its carapace is composed of five central scutes flanked by four pairs of lateral scutes. Underneath, the green turtle has four pairs of inframarginal scutes covering the area between the turtle's plastron and its shell. Mature C. mydas front appendages have only a single claw (as opposed to the hawksbill two), although a second claw is sometimes prominent in young specimens. The carapace of the turtle has various color patterns that change over time. Hatchlings of Chelonia mydas, like those of other marine turtles, have mostly black carapaces and light-colored plastrons. Carapaces of juveniles turn dark brown to olive, while those of mature adults are either entirely brown, spotted or marbled with variegated rays. Underneath, the turtle's plastron is hued yellow. C. mydas limbs are dark-colored and lined with yellow, and are usually marked with a large dark brown spot in the center of each appendage.\n\nIndonesia has a few nesting beaches, one in the Meru Betiri National Reserve in East Java",
+      habitat: "Green sea turtles move across three habitat types, depending on their life stage. They lay eggs on beaches. Mature turtles spend most of their time in shallow, coastal waters with lush seagrass beds. Adults frequent inshore bays, lagoons, and shoals with lush seagrass meadows. Entire generations often migrate between one pair of feeding and nesting areas. Green sea turtles, Chelonia mydas, are classified as an aquatic species and are distributed around the globe in warm tropical to subtropical waters. The environmental parameter that limits the distribution of the turtles is ocean temperatures below 7 to 10 degrees Celsius. Within their geographical range, the green sea turtles generally stay near continental and island coastlines. Near the coastlines, the green sea turtles live within shallow bays and protected shores. In these protected shores and bays, the green sea turtle habitats include coral reefs, salt marshes, and nearshore seagrass beds. The coral reefs provide red, brown, and green algae for their diet and give protection from predators and rough storms within the ocean. The salt marshes and seagrass beds contain seaweed and grass vegetation, allowing ample habitat for the sea turtles.\n\nTurtles spend most of their first five years in convergence zones within the bare open ocean that surround them. These young turtles are rarely seen as they swim in deep, pelagic waters. Green sea turtles typically swim at 2.5–3 km/h (1.6–1.9 mph).",
+      diet: "The diet of green turtles changes with age. Juveniles are carnivorous, but as they mature they become omnivorous. Young sea turtles eat fish eggs, molluscs, jellyfish, small invertebrates, worms, sponges, algae, and crustaceans. Green sea turtles have a relatively slow growth rate because of the low nutritional value of their diet. Body fat turns green because of the consumed vegetation. This diet shift has an effect on the green turtle's skull morphology. Their serrated jaw helps them chew algae and sea grasses. Most adult sea turtles are strictly herbivorous.",
+      color:
+      "96705b",
+      color2:
+      "ba9a8e",
+      loc:
+      "Indo - Pacific Sea"
+  ),
+
+  Reptiles(
+      category: "Reptiles",
       title: "Forsten\nTortoise",
       image:
       "assets/Reptiles/forstentortoise.png",

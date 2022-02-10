@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/BOS/bosmodel.dart';
-import 'package:wild_id/findorg/BOS/bosmap.dart';
-
-
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Bos extends StatefulWidget {
@@ -124,7 +122,12 @@ class _BosState extends State<Bos> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>BOSMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -6.5887829015584805,
+                                  lng2: 106.80558298465886,
+                                  tit: "Borneo Orangutan Survival",
+                                  snip: "Borneo Orangutan Survival"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

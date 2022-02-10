@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
-import 'package:wild_id/findorg/WCS/MapScreen.dart';
 import 'package:wild_id/findorg/orgsTile.dart';
 import 'package:wild_id/findorg/WCS/wcsmodel.dart';
+
+import '../orgMap.dart';
 
 
 class Wcs extends StatefulWidget {
@@ -125,7 +126,12 @@ class _WcsState extends State<Wcs> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: -6.595099666301023,
+                                  lng2: 106.80561086833546,
+                                  tit: "WCS Indonesia",
+                                  snip: "Wildlife Conservation Society"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

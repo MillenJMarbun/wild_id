@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
-import 'package:wild_id/findorg/WWF/MapScreen.dart';
 import 'package:wild_id/findorg/TOP/topmodel.dart';
 import '../orgsTile.dart';
 

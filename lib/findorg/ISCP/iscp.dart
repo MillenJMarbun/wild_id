@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:wild_id/findorg/ISCP/iscpmodel.dart';
-import 'package:wild_id/findorg/ISCP/ISCPMap.dart';
+import '../orgMap.dart';
 import '../orgsTile.dart';
 
 class Iscp extends StatefulWidget {
@@ -122,7 +122,12 @@ class _IscpState extends State<Iscp> {
                                   color: maincol,
                                 )),),
                             ElevatedButton(onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>ISCPMap()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>orgMap(
+                                  lat2: 3.584079549927436,
+                                  lng2: 98.66652833863543,
+                                  tit: "ISCP Indonesia",
+                                  snip: "Indonesian Species Conservation Program"
+                              )));
                             },
                                 child: Text("View Location", style: GoogleFonts.sora(
                                     textStyle: TextStyle(

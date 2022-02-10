@@ -37,6 +37,7 @@ class findOrg extends StatefulWidget {
 }
 
 class _findOrgState extends State<findOrg> {
+
   void navigate(screenName) {
     Navigator.push(
       context,
@@ -119,13 +120,13 @@ class _findOrgState extends State<findOrg> {
                 context: context,
                 delegate: SearchPage(
                   barTheme: ThemeData(
-                    primarySwatch: Colors.deepOrange,
+                    primarySwatch: Colors.teal,
                   ),
                   onQueryUpdate: (s) => print(s),
                   items: screens,
-                  searchLabel: 'Search Pages',
+                  searchLabel: 'Search Organizations',
                   suggestion: Center(
-                    child: Text('Enter A Page Name To Search'),
+                    child: Text('Search Organization'),
                   ),
                   failure: Center(
                     child: Text('No Pages found'),
@@ -221,23 +222,23 @@ class _findOrgState extends State<findOrg> {
               child: new Container(
                 //container for search bar
                 padding: EdgeInsets.only(
-                    right: 20, left: 20, top: 40), // 20,20,40
+                    right: 20, left: 20), // 20,20,40
                 child: new Row(
                   children: [
                     new Container(
-                      padding: EdgeInsets.all(4),
-                      height: 30,
-                      width: MediaQuery.of(context).size.width / 1.37,
+                      padding: EdgeInsets.all(5),
+                      height: 32,
+                      width: MediaQuery.of(context).size.width / 1.15,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color:Colors.grey[200],
                         borderRadius:
-                        BorderRadius.all(Radius.circular(5.0)),
+                        BorderRadius.all(Radius.circular(10)),
                       ),
                       child: Row(
                         children: [
                           Icon(Icons.search),
                           SizedBox(width: 10),
-                          Text('Search'),
+                          Text('Search Organizations', style: GoogleFonts.lexendDeca()),
                         ],
                       ),
                     ),
@@ -246,27 +247,7 @@ class _findOrgState extends State<findOrg> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 40),
-              child: Container(
-                padding: EdgeInsets.all(5),
-                height: 32,
-                width: MediaQuery.of(context).size.width / 1.15,
-                decoration: BoxDecoration(
-                  color:Colors.grey[200],
-                  borderRadius:
-                  BorderRadius.all(Radius.circular(10)),
-                ),
-                child: Row(
-                  children: [
-                    Icon(Icons.search),
-                    SizedBox(width: 10),
-                    Text('Search Organizations', style: GoogleFonts.lexendDeca()),
-                  ],
-                ),
-              ),
-            ),
-
+            SizedBox(height: 30),
             new Container(
               width: MediaQuery.of(context).size.width,
               color: Colors.white,

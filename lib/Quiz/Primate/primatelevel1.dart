@@ -15,7 +15,10 @@ class primatelvl1 extends StatefulWidget {
   primatelvl1({Key key, @required this.bestScore}) : super(key: key);
 }
 
+
+
 class _primatelvl1State extends State<primatelvl1> {
+
   Color mainColor = Color(0xff2e344c);
   Color tealcol = Color(0xff146986);
   var score = 0;
@@ -24,6 +27,199 @@ class _primatelvl1State extends State<primatelvl1> {
 
   @override
   Widget build(BuildContext context) {
+
+    final Questions = [
+      ///question 1
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Primates/sumatraorangutan2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "What does the word Orangutan mean in Indonesian / Malay?",
+          rightAnswer: "Person of the forest",
+          wrongAnswers: [
+            "King of the jungle",
+            "Dangerous Beast",
+            "Great Ape"
+          ],
+          onRightAnswer: () {
+            score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+
+
+      ///question 2
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Primates/javanlangur2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "What is the name of the animal pictured below?",
+          rightAnswer: "East Javan Langur",
+          wrongAnswers: [
+            "Long Tail Macaque",
+            "Tonkean Macaque",
+            "Javan Slow Loris"
+          ],
+          onRightAnswer: () {
+            score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+
+
+      ///question 3
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Primates/Bekantan2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "What does the Proboscis Monkey Diet consists of?",
+          rightAnswer: "All Correct",
+          wrongAnswers: [
+            "Leaves",
+            "seeds",
+            "Fruits"
+          ],
+          onRightAnswer: () {
+            score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+
+
+      ///question 4
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Primates/thomaslangur2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "Where are Thomas Langurs endemic to?",
+          rightAnswer: "Sumatra",
+          wrongAnswers: [
+            "Sulawesi",
+            "Banten",
+            "Borneo"
+          ],
+          onRightAnswer: () {
+            score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+
+
+      ///question 5
+      Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: QuizView(
+          image: Container(
+            width: 200,
+            height: 150,
+            child: Image.asset(
+              "assets/Primates/pygmytarsier2.jpg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          showCorrect: true,
+          tagBackgroundColor: mainColor,
+          tagColor: Colors.white,
+          questionTag: "",
+          answerColor: Colors.white,
+          answerBackgroundColor: tealcol,
+          questionColor: Colors.white,
+          backgroundColor: Colors.deepOrange,
+          width: 400,
+          height: 700,
+          question: "What year was the Pygmy Tarsier was encountered after it was believed to be extinct?",
+          rightAnswer: "2000",
+          wrongAnswers: [
+            "2007",
+            "1990",
+            "2015"
+          ],
+          onRightAnswer: () {
+            score += 20;
+          },
+          onWrongAnswer: (){},
+        ),
+      ),
+    ];
+    Questions.shuffle();
+
     return Scaffold(
       backgroundColor: quizbg,
       appBar: AppBar(
@@ -45,209 +241,19 @@ class _primatelvl1State extends State<primatelvl1> {
          mainAxisAlignment:MainAxisAlignment.start,
          crossAxisAlignment: CrossAxisAlignment.start,
          children: [
-
-           ///question 1
            Container(
-             width: MediaQuery.of(context).size.width,
-             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-             child: QuizView(
-               image: Container(
-                 width: 200,
-                 height: 150,
-                 child: Image.asset(
-                   "assets/Primates/sumatraorangutan2.jpg",
-                   fit: BoxFit.cover,
-                 ),
-               ),
-               showCorrect: true,
-               tagBackgroundColor: mainColor,
-               tagColor: Colors.white,
-               questionTag: "Question 1",
-               answerColor: Colors.white,
-               answerBackgroundColor: tealcol,
-               questionColor: Colors.white,
-               backgroundColor: Colors.deepOrange,
-               width: 400,
-               height: 700,
-               question: "What does the word Orangutan mean in Indonesian / Malay?",
-               rightAnswer: "Person of the forest",
-               wrongAnswers: [
-                 "King of the jungle",
-                 "Dangerous Beast",
-                 "Great Ape"
-               ],
-               onRightAnswer: () {
-                 setState(() {
-                   score += 20;
-                 });
-               },
-               onWrongAnswer: (){},
+             child: Column(
+               mainAxisAlignment: MainAxisAlignment.center,
+               children: <Widget>[
+               ]..addAll(Questions),
              ),
            ),
-
-           ///question 2
-           Container(
-             width: MediaQuery.of(context).size.width,
-             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-             child: QuizView(
-               image: Container(
-                 width: 200,
-                 height: 150,
-                 child: Image.asset(
-                   "assets/Primates/javanlangur2.jpg",
-                   fit: BoxFit.cover,
-                 ),
-               ),
-               showCorrect: true,
-               tagBackgroundColor: mainColor,
-               tagColor: Colors.white,
-               questionTag: "Question 2",
-               answerColor: Colors.white,
-               answerBackgroundColor: tealcol,
-               questionColor: Colors.white,
-               backgroundColor: Colors.deepOrange,
-               width: 400,
-               height: 700,
-               question: "What is the name of the animal pictured below?",
-               rightAnswer: "East Javan Langur",
-               wrongAnswers: [
-                 "Long Tail Macaque",
-                 "Tonkean Macaque",
-                 "Javan Slow Loris"
-               ],
-               onRightAnswer: () {
-                 setState(() {
-                   score += 20;
-                 });
-               },
-               onWrongAnswer: (){},
-             ),
-           ),
-
-           ///question 3
-           Container(
-             width: MediaQuery.of(context).size.width,
-             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-             child: QuizView(
-               image: Container(
-                 width: 200,
-                 height: 150,
-                 child: Image.asset(
-                   "assets/Primates/Bekantan2.jpg",
-                   fit: BoxFit.cover,
-                 ),
-               ),
-               showCorrect: true,
-               tagBackgroundColor: mainColor,
-               tagColor: Colors.white,
-               questionTag: "Question 3",
-               answerColor: Colors.white,
-               answerBackgroundColor: tealcol,
-               questionColor: Colors.white,
-               backgroundColor: Colors.deepOrange,
-               width: 400,
-               height: 700,
-               question: "What does the Proboscis Monkey Diet consists of?",
-               rightAnswer: "All Correct",
-               wrongAnswers: [
-                 "Leaves",
-                 "seeds",
-                 "Fruits"
-               ],
-               onRightAnswer: () {
-                 setState(() {
-                   score += 20;
-                 });
-               },
-               onWrongAnswer: (){},
-             ),
-           ),
-
-           ///question 4
-           Container(
-             width: MediaQuery.of(context).size.width,
-             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-             child: QuizView(
-               image: Container(
-                 width: 200,
-                 height: 150,
-                 child: Image.asset(
-                   "assets/Primates/thomaslangur2.jpg",
-                   fit: BoxFit.cover,
-                 ),
-               ),
-               showCorrect: true,
-               tagBackgroundColor: mainColor,
-               tagColor: Colors.white,
-               questionTag: "Question 4",
-               answerColor: Colors.white,
-               answerBackgroundColor: tealcol,
-               questionColor: Colors.white,
-               backgroundColor: Colors.deepOrange,
-               width: 400,
-               height: 700,
-               question: "Where are Thomas Langurs endemic to?",
-               rightAnswer: "Sumatra",
-               wrongAnswers: [
-                 "Sulawesi",
-                 "Banten",
-                 "Borneo"
-               ],
-               onRightAnswer: () {
-                 setState(() {
-                   score += 20;
-                 });
-               },
-               onWrongAnswer: (){},
-             ),
-           ),
-
-           ///question 5
-           Container(
-             width: MediaQuery.of(context).size.width,
-             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-             child: QuizView(
-               image: Container(
-                 width: 200,
-                 height: 150,
-                 child: Image.asset(
-                   "assets/Primates/pygmytarsier2.jpg",
-                   fit: BoxFit.cover,
-                 ),
-               ),
-               showCorrect: true,
-               tagBackgroundColor: mainColor,
-               tagColor: Colors.white,
-               questionTag: "Question 5",
-               answerColor: Colors.white,
-               answerBackgroundColor: tealcol,
-               questionColor: Colors.white,
-               backgroundColor: Colors.deepOrange,
-               width: 400,
-               height: 700,
-               question: "What year was the Pygmy Tarsier was encountered after it was believed to be extinct?",
-               rightAnswer: "2000",
-               wrongAnswers: [
-                 "2007",
-                 "1990",
-                 "2015"
-               ],
-               onRightAnswer: () {
-                 setState(() {
-                   score += 20;
-                 });
-               },
-               onWrongAnswer: (){},
-             ),
-           ),
-
            Container(
              width: MediaQuery.of(context).size.width,
              height: 90,
              padding: EdgeInsets.symmetric(horizontal: 20),
              child: ElevatedButton(
                  onPressed: () {
-                   setState(() {
                      showModalBottomSheet<void>(
                        context: context,
                        builder: (BuildContext context) {
@@ -287,7 +293,6 @@ class _primatelvl1State extends State<primatelvl1> {
                      if (score > widget.bestScore){
                        updateUser();
                      }
-                   });
                  },
                  child: Text("Finish", style: GoogleFonts.sora(
                      textStyle: TextStyle(
@@ -316,3 +321,4 @@ class _primatelvl1State extends State<primatelvl1> {
   }
 
 }
+
