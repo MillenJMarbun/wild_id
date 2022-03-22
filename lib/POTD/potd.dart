@@ -26,7 +26,8 @@ class _POTDState extends State<POTD> {
     super.initState();
     getImage();
   }
-  
+
+
   void getImage() async {
     Images images = Images();
     await images.getPhoto();
@@ -126,8 +127,6 @@ class _POTDState extends State<POTD> {
                                         fontSize: 14,
                                         color: Colors.black,
                                       ))),
-
-                                  ///'${explanation.toString()}'
                                 ),
                                 SizedBox(height: 40),
                               ],

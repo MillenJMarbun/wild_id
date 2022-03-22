@@ -30,6 +30,9 @@ class _orgMapState extends State<orgMap> {
   }
 
   _getCurrentLocation() async {
+
+    ///In order to request location, you should always check Location Service status and Permission status manually
+
     _serviceEnabled = await location.serviceEnabled();
     if (!_serviceEnabled) {
       _serviceEnabled = await location.requestService();
@@ -81,12 +84,14 @@ class _orgMapState extends State<orgMap> {
             target: LatLng(widget.lat2, widget.lng2), //initial position
             zoom: 10, //initial zoom level
           ),
-          markers: getmarkers(),
-          //markers to show on map
-          mapType: MapType.normal,
-          //map type
+
+          markers: getmarkers(), //markers to show on map
+
+          mapType: MapType.normal, //map type, can be normal, satelite, hybrid
+
           onMapCreated: (controller) {
-            //method called when map is created
+            //method called when map is created, the map must have a controller
+            //the controller can be used for things such as animatecamera and much more
             setState(() {
               mapController = controller;
             });
@@ -96,6 +101,7 @@ class _orgMapState extends State<orgMap> {
     );
   }
 
+  //set is like a list but its unordered / doesnt have an index
   Set<Marker> getmarkers() {
     //markers to place on map
     setState(() {
@@ -127,17 +133,18 @@ class _orgMapState extends State<orgMap> {
           ));
 
 /*
-      markers.add(Marker( //add third marker
+//add more markers here if needed,
+      markers.add(Marker(
         markerId: MarkerId(showLocation.toString()),
-        position: LatLng(-6.188620, 106.893820), //position of marker
+        position: LatLng(-6.188620, 106.893820),
         infoWindow: InfoWindow( //popup info
-          title: 'Marker Title Third ',
-          snippet: 'My Custom Subtitle',
+          title: '',
+          snippet: '',
         ),
-        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+        icon: BitmapDescriptor.defaultMarker,
       ));*/
 
-      //add more markers here
+
     });
 
     return markers;

@@ -7,6 +7,9 @@ import 'package:wild_id/Quiz/Marine/marinelvl1.dart';
 import 'package:wild_id/Quiz/Marine/marinelvl3.dart';
 import 'package:wild_id/Quiz/Marine/marinlvl2.dart';
 import 'package:wild_id/model/user_model.dart';
+import 'package:wild_id/Quiz/Marine/marineleaderboard.dart';
+
+
 class marineLevel extends StatefulWidget {
   @override
   _marineLevelState createState() => _marineLevelState();
@@ -47,6 +50,14 @@ class _marineLevelState extends State<marineLevel> {
         centerTitle: true,
         backgroundColor: quizbg,
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.emoji_events_outlined, color: mywhite),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>marineleaderboard()));
+              }
+          )
+        ],
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,

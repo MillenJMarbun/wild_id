@@ -22,7 +22,7 @@ class Images {
   Future<void> getPhoto() async{
     var url = Uri.parse('https://laurenbehringer.github.io/potd.json');
     var response = await http.get(url);
-    var jsonData = jsonDecode(response.body);
+    var jsonData = jsonDecode(response.body); //jsonDecode = Parses the string and returns the resulting Json object.
     if(jsonData['status'] == "ok"){
       jsonData["photo"].forEach((element){
           Photo photo = Photo(
@@ -36,4 +36,5 @@ class Images {
     }
   }
 }
+
 

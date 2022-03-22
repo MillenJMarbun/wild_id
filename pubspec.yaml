@@ -43,8 +43,6 @@ dependencies:
   search_page: ^1.4.0+1
 
 
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

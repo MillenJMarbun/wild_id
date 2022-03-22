@@ -17,11 +17,9 @@ import '../Drawer.dart';
 import '../starter.dart';
 
 class HomePage extends StatefulWidget {
+
   final int tab;
-  const HomePage({
-    Key key,
-    @required this.tab,
-  }) : super(key: key);
+  const HomePage({Key key, @required this.tab});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -49,19 +47,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  int _page = 0;
-  GlobalKey _bottomNavigationKey = GlobalKey();
-  
   User user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
   
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    FirebaseFirestore.instance.collection("users")
-    .doc(user.uid).get()
+    FirebaseFirestore.instance
+        .collection("users")
+    .doc(user.uid)
+        .get()
     .then((value){
+      //a map is an object that associates keys and values
+      //data method, which returns a Map<String, dynamic>
+      //maps a String key with the dynamic value.
       this.loggedInUser = UserModel.fromMap(value.data());
       setState(() {});
         });
@@ -80,6 +79,7 @@ class _HomePageState extends State<HomePage> {
              mainAxisAlignment: MainAxisAlignment.start,
              crossAxisAlignment: CrossAxisAlignment.start,
              children: [
+               ///the top section
                Container(
                  height: 200,
                  color: maincol, // 20,20,40

@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'Constants/constants.dart';
 import 'WelcomeScreen.dart';
 
@@ -46,10 +45,8 @@ class _StarterState extends State<Starter> {
 
   int _current = 0;
 
-  final List<Widget> imageSliders = imgList
-      .map(
-        (item) => Image.asset(
-      item,
+  final List<Widget> imageSliders = imgList.map((item) => Image.asset(
+       item,
        height: 600, //30
        width: 1000,
     ),
@@ -77,7 +74,7 @@ class _StarterState extends State<Starter> {
               children: [
                 CarouselSlider(
                   options: CarouselOptions(
-                    height: MediaQuery.of(context).size.height / 1.2/*720*/,
+                    height: MediaQuery.of(context).size.height / 1.2,
                       viewportFraction: 2,
                       aspectRatio: 1, //controls the image size  2.98
                       enlargeCenterPage: false,
@@ -85,6 +82,7 @@ class _StarterState extends State<Starter> {
                       autoPlay: true,
                       onPageChanged: (index, reason) {
                         setState(() {
+                          /// reason can be used print(reason); to tell the reason as the page changed, manual or timed, since autoplay this is automatic
                           _current = index;
                         });
                       }),
@@ -97,6 +95,8 @@ class _StarterState extends State<Starter> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: imgList.map((url) {
+                      //map used to iterriate imglist
+                      //used to find out how many items is in imglist
                       int index = imgList.indexOf(url);
                       return Container(
                         width: 10.0, //how big the circles are
@@ -109,7 +109,7 @@ class _StarterState extends State<Starter> {
                           shape: BoxShape.circle,
                           color: _current == index
                               ? maincol
-                              : mywhite, //change from opaque to darker
+                              : mywhite,
                         ),
                       );
                     }).toList(),
@@ -134,3 +134,5 @@ class _StarterState extends State<Starter> {
     );
   }
 }
+
+

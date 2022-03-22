@@ -12,6 +12,7 @@ import 'package:wild_id/model/user_model.dart';
 import 'mammalLvl1.dart';
 import 'mammalLvl2.dart';
 import 'mammalLvl3.dart';
+import 'package:wild_id/Quiz/Mammals/mammalleaderboard.dart';
 
 class mammalsLevel extends StatefulWidget {
   @override
@@ -25,8 +26,11 @@ class _mammalsLevelState extends State<mammalsLevel> {
   @override
   void initState() {
     super.initState();
-    FirebaseFirestore.instance.collection("users")
-        .doc(user.uid).get().then((value){
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user.uid)
+        .get()
+        .then((value){
       this.loggedInUser = UserModel.fromMap(value.data());
       setState(() {});
     });
@@ -53,6 +57,14 @@ class _mammalsLevelState extends State<mammalsLevel> {
         centerTitle: true,
         backgroundColor: quizbg,
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.emoji_events_outlined, color: mywhite),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>mammalleaderboard()));
+              }
+          )
+        ],
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,

@@ -48,7 +48,8 @@ class UserModel{
   });
 
   //receive data from server
-  factory UserModel.fromMap(map){
+  //factory keyword when implementing a constructor that doesn’t always create a new object of its class
+  factory UserModel.fromMap(map){ // map is value.data
     return UserModel(
       uid: map['uid'],
       email: map['email'],
@@ -75,8 +76,11 @@ class UserModel{
     );
   }
 
+
+  //right side is the value of the variable, the left side is whats on firebase
   //sending data to server
-  Map<String, dynamic> toMap(){
+  Map<String, dynamic> toMap(){    //A Map is a collection of key/value pairs, from which you retrieve a value using its associated key. Map(Key, Value)
+    // Key:    Value
     return {
       'uid': uid,
       'email': email,

@@ -7,6 +7,8 @@ import 'package:wild_id/Quiz/Birds/birdlvl1.dart';
 import 'package:wild_id/Quiz/Birds/birdlvl3.dart';
 import 'package:wild_id/model/user_model.dart';
 import 'birdslvl2.dart';
+import 'package:wild_id/Quiz/Birds/birdleaderboard.dart';
+
 
 class birdsLevel extends StatefulWidget {
   @override
@@ -48,6 +50,14 @@ class _birdsLevelState extends State<birdsLevel> {
         centerTitle: true,
         backgroundColor: quizbg,
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.emoji_events_outlined, color: mywhite),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>birdleaderboard()));
+              }
+          )
+        ],
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,

@@ -22,6 +22,14 @@ class _NewsPageState extends State<NewsPage> {
   bool _loading;
   List<Article> newslist;
 
+  @override
+  void initState() {
+    _loading = true;
+    // TODO: implement initState
+    super.initState();
+    getNews();
+  }
+
   void getNews() async {
     News news = News();
     await news.getNews();
@@ -29,14 +37,6 @@ class _NewsPageState extends State<NewsPage> {
     setState(() {
       _loading = false;
     });
-  }
-
-  @override
-  void initState() {
-    _loading = true;
-    // TODO: implement initState
-    super.initState();
-    getNews();
   }
 
   @override
@@ -78,7 +78,7 @@ class _NewsPageState extends State<NewsPage> {
                   margin: EdgeInsets.only(top: 16),
                   child: ListView.builder(
                       itemCount: newslist.length,
-                      shrinkWrap: true,
+                      shrinkWrap: true, //shrinkwrap = true makes size, dependant on how many content
                       physics: ClampingScrollPhysics(),
                       itemBuilder: (context, index) {
                         return NewsTile(

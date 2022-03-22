@@ -37,7 +37,7 @@ class _RegisterState extends State<Register> {
         content: new Text('Do you want to cancel Registration?'),
         actions: <Widget>[
           TextButton(
-            onPressed: () => Navigator.of(context).pop(false),
+            onPressed: () => Navigator.pop(context),/*Navigator.of(context).pop(false),*/
             child: new Text('No'),
           ),
           TextButton(
@@ -57,7 +57,7 @@ class _RegisterState extends State<Register> {
         backgroundColor: bgcolor,
         body: SingleChildScrollView(
           child: Container(
-            height: MediaQuery.of(context).size.height,
+            height: 900,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,6 +128,7 @@ class _RegisterState extends State<Register> {
                               ),
                               keyboardType: TextInputType.emailAddress,
                               validator: (value) {
+                                ///regular expression pattern.
                                 RegExp regex = new RegExp(r'^.{5,}$');
                                 if (value.isEmpty) {
                                   return ("Name cannot be Empty");
@@ -137,7 +138,6 @@ class _RegisterState extends State<Register> {
                                 }
                                 return null;
                               },
-
                               onSaved: (value) {
                                 NameController.text = value;
                               },
@@ -503,11 +503,9 @@ class _RegisterState extends State<Register> {
         .doc(user.uid)
         .set(userModel.toMap());
     Fluttertoast.showToast(msg: "Account Registered ");
-
     Navigator.pushAndRemoveUntil(
         (context),
-        MaterialPageRoute(builder: (context) => MainScreen()),
-            (route) => false);
+        MaterialPageRoute(builder: (context) => MainScreen()), (route) => false);
   }
 
 

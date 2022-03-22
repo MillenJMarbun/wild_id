@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
+import 'package:wild_id/Home/HomePage.dart';
 import 'package:wild_id/MainScreen.dart';
 import 'package:wild_id/Quiz/Amphibians/amphibiansLevel.dart';
 import 'package:wild_id/Quiz/Birds/birdsLevel.dart';
@@ -245,8 +246,7 @@ class _QuizState extends State<Quiz> {
                                 ),
                               );
                             },
-                            child: quizCard(
-                                'Marine', 'assets/Drawer/marine.png'),
+                            child: quizCard('Marine', 'assets/Drawer/marine.png'),
                           ),
 
                         ],
@@ -276,12 +276,12 @@ class _QuizState extends State<Quiz> {
   }
 }
 
-Widget quizCard(String txt, String img, {Color color = Colors.white}) {
+Widget quizCard(String txt, String img) {
   return new Container(
     height: 120,
     width: 105,
     decoration: BoxDecoration(
-      color: color,
+      color: Colors.white,
       borderRadius: BorderRadius.circular(20)
     ),
     padding: EdgeInsets.only(top: 15),

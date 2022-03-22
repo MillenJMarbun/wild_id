@@ -7,6 +7,9 @@ import 'package:wild_id/Quiz/Reptiles/reptilelvl1.dart';
 import 'package:wild_id/Quiz/Reptiles/reptilelvl2.dart';
 import 'package:wild_id/Quiz/Reptiles/reptilelvl3.dart';
 import 'package:wild_id/model/user_model.dart';
+import 'package:wild_id/Quiz/Reptiles/reptileleaderboard.dart';
+
+
 
 class reptileLevel extends StatefulWidget {
   @override
@@ -48,6 +51,14 @@ class _reptileLevelState extends State<reptileLevel> {
         centerTitle: true,
         backgroundColor: quizbg,
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.emoji_events_outlined, color: mywhite),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>reptileleaderboard()));
+              }
+          )
+        ],
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,

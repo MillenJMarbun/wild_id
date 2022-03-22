@@ -278,9 +278,38 @@ class _mammallvl3State extends State<mammallvl3> {
                                   child: ElevatedButton(
                                       child: const Text('Finish'),
                                       onPressed: () {
-                                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>Quiz()),
-                                            ModalRoute.withName("/")
-                                        );
+                                        if (score > 79){
+                                          showDialog(
+                                            context: context,
+                                            builder: (context) => new AlertDialog(
+                                              title: new Text("CONGRATULATIONS YOU HAVE COMPLETED ALL MAMMAL LEVELS", style: GoogleFonts.sora(
+                                                  textStyle: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black,
+                                                  )
+                                              ),),
+                                              content: Container(
+                                                child: Image.asset(
+                                                  'assets/trophy.gif',
+                                                ),
+                                              ),
+                                              actions: <Widget>[
+                                                TextButton(
+                                                  onPressed: () => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>Quiz()),
+                                                      ModalRoute.withName("/")
+                                                  ),
+                                                  child: new Text('OK', style: GoogleFonts.sora(
+                                                      textStyle: TextStyle(
+                                                        fontWeight: FontWeight.bold,
+                                                        color: maincol,
+                                                      )
+                                                  ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        }
                                       }
                                   ),
                                 )

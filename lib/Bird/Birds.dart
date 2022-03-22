@@ -73,8 +73,7 @@ class _BirdsState extends State<Birds> {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
-                        end:
-                        Alignment(0.8, 0.0),
+                        end: Alignment(0.8, 0.0),
                         colors: <Color>[
                           Color(0xff233329),
                           Color(0xff63d471)

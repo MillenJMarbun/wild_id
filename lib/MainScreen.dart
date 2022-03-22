@@ -18,14 +18,15 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
 
   Future<bool> _onWillPop() async {
-    return (await showDialog(
+    return (
+        await showDialog(
       context: context,
       builder: (context) => new AlertDialog(
         title: new Text('Are you sure?'),
         content: new Text('Do you want to Log Out?'),
         actions: <Widget>[
           TextButton(
-            onPressed: () => Navigator.of(context).pop(false),
+            onPressed: () => Navigator.pop(context),
             child: new Text('No'),
           ),
           TextButton(
@@ -43,7 +44,12 @@ class _MainScreenState extends State<MainScreen> {
   GlobalKey _bottomNavigationKey = GlobalKey();*/
 
   int _page = 0;
-  final screens = const [HomePage(tab : 1), POTD(tab : 2), NewsPage(tab: 3), findOrg(tab: 4)];
+  final screens = const [
+    HomePage(tab : 1),
+    POTD(tab : 2),
+    NewsPage(tab: 3),
+    findOrg(tab: 4)
+  ];
 
 
   @override
@@ -64,7 +70,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
                 child: GNav(
                   rippleColor: Colors.grey[300],
                   hoverColor: Colors.grey[100],
@@ -74,7 +80,7 @@ class _MainScreenState extends State<MainScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                   duration: Duration(milliseconds: 400),
                   tabBackgroundColor: maincol,
-                  color: Colors.black,
+                  /*color: Colors.pink,*/
                   tabs: [
                     GButton(
                       icon: LineIcons.home,

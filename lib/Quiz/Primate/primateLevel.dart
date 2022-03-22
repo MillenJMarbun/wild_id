@@ -9,6 +9,7 @@ import 'package:wild_id/Quiz/Primate/primatelevel2.dart';
 import 'package:wild_id/Quiz/Primate/primatelevel3.dart';
 import 'package:wild_id/Quiz/Quiz.dart';
 import 'package:wild_id/model/user_model.dart';
+import 'package:wild_id/Quiz/Primate/primateleaderboard.dart';
 
 class PrimateLevel extends StatefulWidget  {
   @override
@@ -24,7 +25,9 @@ class _PrimateLevelState extends State<PrimateLevel>  {
   void initState() {
     super.initState();
     FirebaseFirestore.instance.collection("users")
-        .doc(user.uid).get().then((value){
+        .doc(user.uid)
+        .get()
+        .then((value){
       this.loggedInUser = UserModel.fromMap(value.data());
       setState(() {});
     });
@@ -58,6 +61,14 @@ class _PrimateLevelState extends State<PrimateLevel>  {
           ),
           onPressed: () => Navigator.pop(context),
         ),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.emoji_events_outlined, color: mywhite),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>primateleaderboard()));
+              }
+          )
+        ],
       ),
       body: SingleChildScrollView(
           child: Container(

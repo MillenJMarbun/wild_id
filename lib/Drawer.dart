@@ -23,10 +23,6 @@ class NavDrawer extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    /*Text(
-                      'Side menu',
-                      style: TextStyle(color: Colors.white, fontSize: 25),
-                    ),*/
                     SizedBox(height: 17),
                     Image.asset('assets/wildid.png'),
                   ],

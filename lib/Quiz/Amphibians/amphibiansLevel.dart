@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wild_id/Constants/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:wild_id/Quiz/Amphibians/amphibianleaderboard.dart';
 import 'package:wild_id/Quiz/Amphibians/amphibianslvl1.dart';
 import 'package:wild_id/Quiz/Amphibians/amphibianslvl2.dart';
 import 'package:wild_id/Quiz/Amphibians/amphibianslvl3.dart';
@@ -48,6 +49,14 @@ class _amphibiansLevelState extends State<amphibiansLevel> {
         centerTitle: true,
         backgroundColor: quizbg,
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.emoji_events_outlined, color: mywhite),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>amphLeaderboard()));
+              }
+              )
+        ],
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
